@@ -48,7 +48,7 @@ def query_vso_providers(skip_download=True):
 
     flag_list = []
 
-    for s in list(sources)[0:-1]:
+    for s in list(sources):
         flag_entry = {}
         flag_entry['\ufeffProvider'] = s['\ufeffProvider']
         flag_entry['Source'] = s['Source']
@@ -150,8 +150,11 @@ def query_vso_providers(skip_download=True):
     
 
     
-def find_query_with_data(instrument = 'SECCHI'):
-
+def find_query_with_data(instrument = 'SECCHI', n_iterations = 40):
+    '''Repeatedly generate queries for a VSO-supported instrument with randomized
+    search times, to attempt to find a query that returns data.'''
+    
+    
     import warnings
     logging.basicConfig(filename='example2.log', level=logging.WARNING)
     
@@ -176,8 +179,9 @@ def find_query_with_data(instrument = 'SECCHI'):
 
     success = 0
     successful_query_dict = {}
-    
-    for i in range(0,40):
+
+    # repeatedly generate queries until we get a succesful result
+    for i in range(0,n_iterations):
         
         dt_randomize = dt * np.random.uniform()
         
@@ -189,6 +193,7 @@ def find_query_with_data(instrument = 'SECCHI'):
                                     a.Source(source_dict['Source']), a.Instrument(source_dict['Instrument']), response_format = 'legacy')
 
         if len(result) > 0:
+            # if query returns data then remember the query and stop searching
             t1_success = t1_query
             t2_success = t2_query
             success = True
@@ -209,12 +214,14 @@ def find_query_with_data(instrument = 'SECCHI'):
 
         
 def create_known_query_database():
-
+    '''Create a file containing VSO queries for each supported instrument that
+    are known to return results.'''
+    
     sources = read_vso_sources()
 
     database = []
     
-    for s in list(sources)[80:-1]:
+    for s in list(sources):
         result = find_query_with_data(instrument = s['Instrument'])
         database.append(result[0])
 
@@ -229,6 +236,7 @@ def create_known_query_database():
         
 
 def create_master_status_file():
+    '''Read all existing VSO health check files and create a master record.'''
 
     files = glob.glob('vso_health_check*.csv')
 
