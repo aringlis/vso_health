@@ -3,14 +3,17 @@ import datetime
 import sunpy
 from sunpy.net import vso, attrs as a
 
+import os
 import csv
 import warnings
 import logging
 import glob
 import pandas
 
+data_path = os.path.expanduser('~/physics/data_curation/vso_health/')
+
 def read_vso_sources():
-    sources = csv.DictReader(open('vso_sources.csv'))
+    sources = csv.DictReader(open(os.path.join(data_path,'vso_sources.csv')))
 
     return sources
 
@@ -35,8 +38,8 @@ def query_vso_providers(skip_download=True):
 
     
     fname_append = datetime.datetime.now().strftime('%Y%m%d_%H%M%S')     
-    logging.basicConfig(filename='query_vso_' + fname_append + '.log', level=logging.INFO)
-    skip_list = ['SJ','SP1','SP2','Hi_C','Hi-C21']
+    logging.basicConfig(filename=os.path.join(data_path,'query_vso_' + fname_append + '.log'), level=logging.INFO)
+    skip_list = [] #['SJ','SP1','SP2','Hi_C','Hi-C21']
     
     client = vso.VSOClient()
 
@@ -44,7 +47,7 @@ def query_vso_providers(skip_download=True):
     sources = read_vso_sources()
 
     # get a list of known successful queries as a backup test
-    known_queries = list(csv.DictReader(open('vso_known_query_database_full.csv')))
+    known_queries = list(csv.DictReader(open(os.path.join(data_path,'vso_known_query_database_full.csv'))))
 
     flag_list = []
 
@@ -132,7 +135,7 @@ def query_vso_providers(skip_download=True):
             
     # write the results of the check to a csv file
   #  fname_ext = datetime.datetime.now().strftime('%Y%m%d_%H%M%S')
-    fname = 'vso_health_check_' + fname_append + '.csv'
+    fname = os.path.join(data_path,'vso_health_check_' + fname_append + '.csv')
             
   #  with open(fname,'w') as f: 
    #     for key in flags.keys(): 
@@ -227,7 +230,7 @@ def create_known_query_database():
 
 
     header = ['\ufeffProvider','Source','Instrument','Date_Start','Date_End']
-    with open('vso_known_query_database.csv','w') as f:
+    with open(os.path.join(data_path,'vso_known_query_database.csv','w')) as f:
         w = csv.DictWriter(f, header)
         w.writeheader()
         w.writerows(database)
@@ -238,11 +241,11 @@ def create_known_query_database():
 def create_master_status_file():
     '''Read all existing VSO health check files and create a master record.'''
 
-    files = glob.glob('vso_health_check*.csv')
-
+    files = glob.glob(os.path.join(data_path,'vso_health_check*.csv'))
+    files.sort()
     filestrings = files[0].split('_')
-    file_date = filestrings[3]
-    file_time = filestrings[4].split('.')[0]
+    file_date = filestrings[5]
+    file_time = filestrings[6].split('.')[0]
     column_id = file_date + '_' + file_time
 
     df_master = pandas.read_csv(files[0])
@@ -251,8 +254,8 @@ def create_master_status_file():
     for f in files[1:]:
         # extract the date and time for each VSO check file
         filestrings = f.split('_')
-        file_date = filestrings[3]
-        file_time = filestrings[4].split('.')[0]
+        file_date = filestrings[5]
+        file_time = filestrings[6].split('.')[0]
         column_id = file_date + '_' + file_time
 
         
@@ -262,7 +265,7 @@ def create_master_status_file():
         df_master = pandas.merge(df_master, df)
 
 
-    df_master.to_csv('vso_health_status_master_record.csv')
+    df_master.to_csv(os.path.join(data_path,'vso_health_status_master_record.csv'))
 
     return df_master, df
 
