@@ -38,7 +38,7 @@ def query_vso_providers(skip_download=True):
 
     
     fname_append = datetime.datetime.now().strftime('%Y%m%d_%H%M%S')     
-    logging.basicConfig(filename=os.path.join(data_path,'query_vso_' + fname_append + '.log'), level=logging.INFO)
+    logging.basicConfig(filename=os.path.join(data_path,'logs/query_vso_' + fname_append + '.log'), level=logging.INFO)
     skip_list = [] #['SJ','SP1','SP2','Hi_C','Hi-C21']
     
     client = vso.VSOClient()
@@ -80,7 +80,7 @@ def query_vso_providers(skip_download=True):
     
             # now make the query
             result = client.search(a.Time(t1_query, t2_query), a.Provider(s['\ufeffProvider']),
-                                    a.Source(s['Source']), a.Instrument(s['Instrument']))
+                                    a.Source(s['Source']), a.Instrument(s['Instrument']), response_format = 'legacy')
 
 
             if len(result) == 0:
@@ -91,7 +91,8 @@ def query_vso_providers(skip_download=True):
                     known_t1 = datetime.datetime.strptime(query['Date_Start'],'%Y-%m-%d %H:%M:%S.%f')
                     known_t2 = datetime.datetime.strptime(query['Date_End'],'%Y-%m-%d %H:%M:%S.%f')
                     result2 = client.search(a.Time(known_t1, known_t2), a.Provider(s['\ufeffProvider']),
-                                        a.Source(s['Source']), a.Instrument(s['Instrument']))
+                                        a.Source(s['Source']), a.Instrument(s['Instrument']),
+                                                response_format = 'legacy')
                     logging.info('Random query failed. Trying known query: '  + s['\ufeffProvider'] + ' | ' + s['Source'] +
                         ' | ' + s['Instrument'] + ' between ' + known_t1.isoformat() + ' and ' +
                         known_t2.isoformat())
@@ -112,14 +113,18 @@ def query_vso_providers(skip_download=True):
             
 
                 
-            if not skip_download:
-                dl = client.fetch(result[0])
-                if len(dl.errors) !=0: 
-                    flag_entry['Status'] = 9
-                elif (len(dl) == 0):
+            if not skip_download and len(result) > 0:
+                try:
+                    dl = client.fetch(result[0])
+                    if len(dl.errors) !=0: 
+                        flag_entry['Status'] = 8
+                    elif (len(dl) == 0):
+                        flag_entry['Status'] = 8
+                    else:
+                        flag_entry['Status'] = 0
+                except:
+                    #if the download fails due to a hard error (e.g. Evans radioheliograph), catch this and continue
                     flag_entry['Status'] = 8
-                else:
-                    flag_entry['Status'] = 0
 
         
 
