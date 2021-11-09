@@ -1,0 +1,208 @@
+WARNING:sunpy:SunpyUserWarning: Connection to http://docs.virtualsolar.org/WSDL/VSOi_rpc_literal.wsdl failed with error <urlopen error [Errno 60] Operation timed out>. Retrying with different url and port.
+WARNING:zeep.wsdl.bindings.soap:Forcing soap:address location to HTTPS
+WARNING:zeep.wsdl.bindings.soap:Forcing soap:address location to HTTPS
+INFO:root:Query: HAO | MLSO | K-Cor between 2020-12-11T04:02:47.642192 and 2020-12-12T04:02:47.642192
+WARNING:sunpy:SunpyDeprecationWarning: The default response format from the VSO client will be changing to 'table' in version 3.1. To remove this warning set response_format='legacy' to maintain the old behaviour or response_format='table' to use the new behaviour.
+WARNING:sunpy:SunpyUserWarning: VSO-C500 :soap:Server.Transport : 503 Service Unavailable
+WARNING:zeep.wsdl.bindings.soap:Forcing soap:address location to HTTPS
+WARNING:zeep.wsdl.bindings.soap:Forcing soap:address location to HTTPS
+INFO:root:Random query failed. No known query for: HAO | MLSO | K-Cor
+INFO:root:Query: HAO | MLSO | chp between 2004-08-28T19:27:11.795225 and 2004-08-29T19:27:11.795225
+WARNING:zeep.wsdl.bindings.soap:Forcing soap:address location to HTTPS
+WARNING:zeep.wsdl.bindings.soap:Forcing soap:address location to HTTPS
+INFO:root:Random query failed. No known query for: HAO | MLSO | chp
+INFO:root:Query: HAO | MLSO | dpm between 1999-11-27T15:30:03.199632 and 1999-11-28T15:30:03.199632
+WARNING:zeep.wsdl.bindings.soap:Forcing soap:address location to HTTPS
+WARNING:zeep.wsdl.bindings.soap:Forcing soap:address location to HTTPS
+INFO:root:Random query failed. No known query for: HAO | MLSO | dpm
+INFO:root:Query: HAO | MLSO | mk4 between 2005-01-29T04:49:55.734943 and 2005-01-30T04:49:55.734943
+WARNING:zeep.wsdl.bindings.soap:Forcing soap:address location to HTTPS
+WARNING:zeep.wsdl.bindings.soap:Forcing soap:address location to HTTPS
+INFO:root:Random query failed. No known query for: HAO | MLSO | mk4
+INFO:root:Query: HAO | SMM | cp between 1985-05-25T21:35:58.176056 and 1985-05-26T21:35:58.176056
+WARNING:zeep.wsdl.bindings.soap:Forcing soap:address location to HTTPS
+WARNING:zeep.wsdl.bindings.soap:Forcing soap:address location to HTTPS
+INFO:root:Random query failed. No known query for: HAO | SMM | cp
+INFO:root:Query: INAF-OACT | OACT | BE-Continuum between 2021-06-05T15:28:21.072478 and 2021-06-06T15:28:21.072478
+WARNING:zeep.wsdl.bindings.soap:Forcing soap:address location to HTTPS
+WARNING:zeep.wsdl.bindings.soap:Forcing soap:address location to HTTPS
+WARNING:sunpy:SunpyDeprecationWarning: The default response format from the VSO client will be changing to 'table' in version 3.1. To remove this warning set response_format='legacy' to maintain the old behaviour or response_format='table' to use the new behaviour.
+WARNING:zeep.wsdl.bindings.soap:Forcing soap:address location to HTTPS
+WARNING:zeep.wsdl.bindings.soap:Forcing soap:address location to HTTPS
+INFO:root:Random query failed. Trying known query: INAF-OACT | OACT | BE-Continuum between 2020-07-06T18:08:42.201007 and 2020-07-09T18:08:42.201007
+INFO:root:Query: INAF-OACT | OACT | BE-Halpha between 2021-02-25T13:19:00.262069 and 2021-02-26T13:19:00.262069
+WARNING:zeep.wsdl.bindings.soap:Forcing soap:address location to HTTPS
+WARNING:zeep.wsdl.bindings.soap:Forcing soap:address location to HTTPS
+INFO:root:Query: INAF-OACT | OACT | Cooke-Refractor between 2012-07-27T23:39:22.019561 and 2012-07-28T23:39:22.019561
+WARNING:zeep.wsdl.bindings.soap:Forcing soap:address location to HTTPS
+WARNING:zeep.wsdl.bindings.soap:Forcing soap:address location to HTTPS
+INFO:root:Random query failed. No known query for: INAF-OACT | OACT | Cooke-Refractor
+INFO:root:Query: JSOC | SDO | AIA between 2015-10-27T03:36:19.807864 and 2015-10-28T03:36:19.807864
+WARNING:zeep.wsdl.bindings.soap:Forcing soap:address location to HTTPS
+WARNING:zeep.wsdl.bindings.soap:Forcing soap:address location to HTTPS
+INFO:root:Query: JSOC | SDO | HMI between 2011-08-30T07:00:47.442712 and 2011-08-31T07:00:47.442712
+WARNING:zeep.wsdl.bindings.soap:Forcing soap:address location to HTTPS
+WARNING:zeep.wsdl.bindings.soap:Forcing soap:address location to HTTPS
+INFO:root:Query: KIS | ChroTel | ChroTel between 2016-06-28T04:15:03.132014 and 2016-06-29T04:15:03.132014
+WARNING:zeep.wsdl.bindings.soap:Forcing soap:address location to HTTPS
+WARNING:zeep.wsdl.bindings.soap:Forcing soap:address location to HTTPS
+INFO:root:Random query failed. No known query for: KIS | ChroTel | ChroTel
+INFO:root:Query: KSO | KSO | CAII between 2010-12-14T20:06:18.349383 and 2010-12-15T20:06:18.349383
+WARNING:sunpy:SunpyUserWarning: VSO-D505 Version not supported
+WARNING:zeep.wsdl.bindings.soap:Forcing soap:address location to HTTPS
+WARNING:zeep.wsdl.bindings.soap:Forcing soap:address location to HTTPS
+INFO:root:Random query failed. No known query for: KSO | KSO | CAII
+INFO:root:Query: KSO | KSO | FILM between 1976-03-14T07:26:21.019685 and 1976-03-15T07:26:21.019685
+WARNING:zeep.wsdl.bindings.soap:Forcing soap:address location to HTTPS
+WARNING:zeep.wsdl.bindings.soap:Forcing soap:address location to HTTPS
+INFO:root:Random query failed. No known query for: KSO | KSO | FILM
+INFO:root:Query: KSO | KSO | HA2 between 2013-05-02T09:51:01.224302 and 2013-05-03T09:51:01.224302
+WARNING:zeep.wsdl.bindings.soap:Forcing soap:address location to HTTPS
+WARNING:zeep.wsdl.bindings.soap:Forcing soap:address location to HTTPS
+INFO:root:Random query failed. No known query for: KSO | KSO | HA2
+INFO:root:Query: KSO | KSO | KPDC between 2012-05-09T19:18:52.710785 and 2012-05-10T19:18:52.710785
+WARNING:zeep.wsdl.bindings.soap:Forcing soap:address location to HTTPS
+WARNING:zeep.wsdl.bindings.soap:Forcing soap:address location to HTTPS
+INFO:root:Random query failed. No known query for: KSO | KSO | KPDC
+INFO:root:Query: KSO | KSO | PHOKA between 1998-12-19T18:11:35.044620 and 1998-12-20T18:11:35.044620
+WARNING:zeep.wsdl.bindings.soap:Forcing soap:address location to HTTPS
+WARNING:zeep.wsdl.bindings.soap:Forcing soap:address location to HTTPS
+INFO:root:Random query failed. No known query for: KSO | KSO | PHOKA
+INFO:root:Query: KSO | KSO | TM-1001 between 2001-08-14T04:43:17.191276 and 2001-08-15T04:43:17.191276
+WARNING:zeep.wsdl.bindings.soap:Forcing soap:address location to HTTPS
+WARNING:zeep.wsdl.bindings.soap:Forcing soap:address location to HTTPS
+INFO:root:Random query failed. No known query for: KSO | KSO | TM-1001
+INFO:root:Query: KSO | KSO | TM-1010 between 2009-05-23T18:59:10.717710 and 2009-05-24T18:59:10.717710
+WARNING:zeep.wsdl.bindings.soap:Forcing soap:address location to HTTPS
+WARNING:zeep.wsdl.bindings.soap:Forcing soap:address location to HTTPS
+INFO:root:Random query failed. No known query for: KSO | KSO | TM-1010
+INFO:root:Query: LASP | MINXSS1 | X123 between 2016-06-19T07:32:18.257266 and 2016-06-20T07:32:18.257266
+WARNING:zeep.wsdl.bindings.soap:Forcing soap:address location to HTTPS
+WARNING:zeep.wsdl.bindings.soap:Forcing soap:address location to HTTPS
+INFO:root:Query: LASP | SDO | EVE between 2012-02-08T12:22:49.709536 and 2012-02-09T12:22:49.709536
+WARNING:zeep.wsdl.bindings.soap:Forcing soap:address location to HTTPS
+WARNING:zeep.wsdl.bindings.soap:Forcing soap:address location to HTTPS
+INFO:root:Query: LMSAL | IRIS | IRIS between 2013-12-17T23:48:04.489067 and 2013-12-18T23:48:04.489067
+WARNING:zeep.wsdl.bindings.soap:Forcing soap:address location to HTTPS
+WARNING:zeep.wsdl.bindings.soap:Forcing soap:address location to HTTPS
+INFO:root:Query: LSSP | RHESSI | RHESSI between 2018-09-26T05:51:17.071713 and 2018-09-27T05:51:17.071713
+WARNING:zeep.wsdl.bindings.soap:Forcing soap:address location to HTTPS
+WARNING:zeep.wsdl.bindings.soap:Forcing soap:address location to HTTPS
+WARNING:zeep.wsdl.bindings.soap:Forcing soap:address location to HTTPS
+WARNING:zeep.wsdl.bindings.soap:Forcing soap:address location to HTTPS
+INFO:root:Random query failed. Trying known query: LSSP | RHESSI | RHESSI between 2006-11-18T17:33:49.141076 and 2006-11-21T17:33:49.141076
+INFO:root:Query: MSFC | CLASP2 | SJ between 2019-04-11T00:00:00 and 2019-04-12T00:00:00
+WARNING:zeep.wsdl.bindings.soap:Forcing soap:address location to HTTPS
+WARNING:zeep.wsdl.bindings.soap:Forcing soap:address location to HTTPS
+INFO:root:Query: MSFC | CLASP2 | SP1 between 2019-04-11T00:00:00 and 2019-04-12T00:00:00
+WARNING:sunpy:SunpyUserWarning: Connection to http://docs.virtualsolar.org/WSDL/VSOi_rpc_literal.wsdl failed with error <urlopen error [Errno 61] Connection refused>. Retrying with different url and port.
+WARNING:zeep.wsdl.bindings.soap:Forcing soap:address location to HTTPS
+WARNING:zeep.wsdl.bindings.soap:Forcing soap:address location to HTTPS
+INFO:root:Query: MSFC | CLASP2 | SP2 between 2019-04-11T00:00:00 and 2019-04-12T00:00:00
+INFO:root:Query: MSFC | HI-C | HI-C between 2012-07-11T00:00:00 and 2012-07-12T00:00:00
+INFO:root:Query: MSFC | HI-C21 | HI-C21 between 2018-05-29T00:00:00 and 2018-05-30T00:00:00
+INFO:root:Query: MSU | YOHKOH | BCS between 1992-09-11T21:45:27.057424 and 1992-09-12T21:45:27.057424
+WARNING:sunpy:SunpyUserWarning: VSO-C500 :soap:Server.Transport : 500 Internal Server Error
+INFO:root:Random query failed. No known query for: MSU | YOHKOH | BCS
+INFO:root:Query: MSU | YOHKOH | HXT between 2001-07-02T05:21:10.254384 and 2001-07-03T05:21:10.254384
+INFO:root:Random query failed. No known query for: MSU | YOHKOH | HXT
+INFO:root:Query: MSU | YOHKOH | SXT between 1992-08-19T17:46:32.657235 and 1992-08-20T17:46:32.657235
+INFO:root:Random query failed. No known query for: MSU | YOHKOH | SXT
+INFO:root:Query: MSU | YOHKOH | WBS between 2001-03-14T21:48:46.818388 and 2001-03-15T21:48:46.818388
+INFO:root:Random query failed. No known query for: MSU | YOHKOH | WBS
+INFO:root:Query: MWSPADP | MtWilson | 60-ft SHG between 1976-09-01T11:36:30.623108 and 1976-09-02T11:36:30.623108
+INFO:root:Query: NGDC | GOES-12 | SXI-0 between 2021-08-16T02:12:49.956651 and 2021-08-17T02:12:49.956651
+WARNING:sunpy:SunpyUserWarning: VSO-D503 Unavailable - Not able to access NGDC at this time.  We are working on a solution
+INFO:root:Random query failed. No known query for: NGDC | GOES-12 | SXI-0
+INFO:root:Query: NOAA | GOES16 | SUVI between 2018-12-23T07:22:52.726370 and 2018-12-24T07:22:52.726370
+INFO:root:Query: NOAA | GOES17 | SUVI between 2019-05-11T09:11:01.933488 and 2019-05-12T09:11:01.933488
+INFO:root:Query: NRL | PSP | WISPR between 2021-02-14T09:57:37.454185 and 2021-02-15T09:57:37.454185
+INFO:root:Query: NSO | Evans | spectroheliograph between 1997-10-04T05:53:14.708686 and 1997-10-05T05:53:14.708686
+INFO:root:Random query failed. Trying known query: NSO | Evans | spectroheliograph between 1996-02-26T00:23:31.454907 and 1996-02-29T00:23:31.454907
+INFO:root:Query: NSO | GONG | Big Bear between 2015-06-22T17:36:49.180379 and 2015-06-23T17:36:49.180379
+INFO:root:Query: NSO | GONG | Cerro Tololo between 2005-09-23T18:19:50.996648 and 2005-09-24T18:19:50.996648
+INFO:root:Random query failed. Trying known query: NSO | GONG | Cerro Tololo between 2015-09-22T23:39:40.044023 and 2015-09-25T23:39:40.044023
+INFO:root:Query: NSO | GONG | El Teide between 2019-10-30T05:34:47.433229 and 2019-10-31T05:34:47.433229
+INFO:root:Query: NSO | GONG | Learmonth between 2019-03-12T11:23:19.545669 and 2019-03-13T11:23:19.545669
+INFO:root:Query: NSO | GONG | MERGED GONG between 2012-04-28T08:58:07.055009 and 2012-04-29T08:58:07.055009
+INFO:root:Query: NSO | GONG | Mauna Loa between 2021-10-17T23:34:12.141528 and 2021-10-18T23:34:12.141528
+INFO:root:Query: NSO | GONG | Udaipur between 2011-06-20T01:42:13.566685 and 2011-06-21T01:42:13.566685
+INFO:root:Query: NSO | HXECLIPSE | HXECLIPSE between 1911-04-02T09:26:55.838214 and 1911-04-03T09:26:55.838214
+INFO:root:Random query failed. No known query for: NSO | HXECLIPSE | HXECLIPSE
+INFO:root:Query: NSO | ISOON | ISOON between 2003-11-22T01:53:49.880646 and 2003-11-23T01:53:49.880646
+INFO:root:Random query failed. Trying known query: NSO | ISOON | ISOON between 2012-04-15T09:13:42.709996 and 2012-04-18T09:13:42.709996
+INFO:root:Query: NSO | IVM | IVM between 2002-08-02T17:28:19.281433 and 2002-08-03T17:28:19.281433
+INFO:root:Random query failed. Trying known query: NSO | IVM | IVM between 2001-05-05T18:53:13.517481 and 2001-05-08T18:53:13.517481
+INFO:root:Query: NSO | KPVT | 512-channel magnetograph between 1987-01-12T09:40:33.790447 and 1987-01-13T09:40:33.790447
+INFO:root:Query: NSO | KPVT | spectromagnetograph between 1992-04-19T09:18:11.833467 and 1992-04-20T09:18:11.833467
+INFO:root:Query: NSO | McMath | solar fts spectrometer between 1999-02-07T12:34:43.523585 and 1999-02-08T12:34:43.523585
+INFO:root:Random query failed. Trying known query: NSO | McMath | solar fts spectrometer between 1992-09-21T15:57:45.551974 and 1992-09-24T15:57:45.551974
+INFO:root:Query: NSO | PTMC | PTMC between 1991-10-22T23:58:27.394940 and 1991-10-23T23:58:27.394940
+INFO:root:Random query failed. Trying known query: NSO | PTMC | PTMC between 1997-11-26T06:01:49.439688 and 1997-11-29T06:01:49.439688
+INFO:root:Query: NSO | SDO | HMI between 2012-04-09T02:38:45.121644 and 2012-04-10T02:38:45.121644
+INFO:root:Query: NSO | SOLIS | ISS between 2008-11-15T07:43:17.027784 and 2008-11-16T07:43:17.027784
+INFO:root:Query: NSO | SOLIS | vsm between 2020-12-03T12:05:18.572213 and 2020-12-04T12:05:18.572213
+INFO:root:Random query failed. Trying known query: NSO | SOLIS | vsm between 2009-04-06T09:39:57.763575 and 2009-04-09T09:39:57.763575
+INFO:root:Query: NWRA | MCCD | MEES between 1990-09-08T10:03:47.208463 and 1990-09-09T10:03:47.208463
+INFO:root:Random query failed. Trying known query: NWRA | MCCD | MEES between 2003-02-26T07:48:00.344230 and 2003-03-01T07:48:00.344230
+INFO:root:Query: OBSPM | OBSPM | Meudon Spectroheliograph between 2020-08-21T08:49:21.373405 and 2020-08-22T08:49:21.373405
+INFO:root:Query: OMP | OMP | CLIMSO between 2016-03-31T12:59:07.457843 and 2016-04-01T12:59:07.457843
+INFO:root:Random query failed. Trying known query: OMP | OMP | CLIMSO between 2015-05-31T08:43:03.176104 and 2015-06-03T08:43:03.176104
+INFO:root:Query: OVRO | OVRO | OVSA between 2020-10-22T22:12:22.368357 and 2020-10-23T22:12:22.368357
+WARNING:sunpy:SunpyUserWarning: VSO-C500 :soap:Server.Transport : 404 Not Found
+INFO:root:Random query failed. No known query for: OVRO | OVRO | OVSA
+INFO:root:Query: ROB | PROBA2 | SWAP between 2021-06-25T23:31:35.943663 and 2021-06-26T23:31:35.943663
+INFO:root:Query: SAO | Hinode | XRT between 2017-01-17T17:00:48.302147 and 2017-01-18T17:00:48.302147
+WARNING:sunpy:SunpyUserWarning: VSO-C500 :soap:Server.Transport : 411 Length Required
+INFO:root:Random query failed. No known query for: SAO | Hinode | XRT
+INFO:root:Query: SDAC | EUNIS | LONGWAVE-LOBE-06 between 2006-04-12T00:00:00 and 2006-04-13T00:00:00
+INFO:root:Query: SDAC | EUNIS | LONGWAVE-LOBE-07 between 2007-11-06T00:00:00 and 2007-11-07T00:00:00
+INFO:root:Query: SDAC | EUNIS | LONGWAVE-SLIT-06 between 2006-04-12T00:00:00 and 2006-04-13T00:00:00
+INFO:root:Query: SDAC | EUNIS | LONGWAVE-SLIT-07 between 2007-11-06T00:00:00 and 2007-11-07T00:00:00
+INFO:root:Query: SDAC | EUNIS | SHORTWAVE-LOBE-06 between 2006-04-12T00:00:00 and 2006-04-13T00:00:00
+INFO:root:Query: SDAC | EUNIS | SHORTWAVE-LOBE-07 between 2007-11-06T00:00:00 and 2007-11-07T00:00:00
+INFO:root:Query: SDAC | EUNIS | SHORTWAVE-SLIT-06 between 2006-04-12T00:00:00 and 2006-04-13T00:00:00
+INFO:root:Query: SDAC | EUNIS | SHORTWAVE-SLIT-07 between 2007-11-06T00:00:00 and 2007-11-07T00:00:00
+INFO:root:Query: SDAC | FOXSI1 | FOXSI between 2012-11-02T00:00:00 and 2012-11-03T00:00:00
+INFO:root:Query: SDAC | FOXSI2 | FOXSI between 2014-12-11T00:00:00 and 2014-12-12T00:00:00
+INFO:root:Query: SDAC | FOXSI3 | FOXSI between 2018-09-07T00:00:00 and 2018-09-08T00:00:00
+INFO:root:Query: SDAC | FOXSI3 | PHOENIX between 2018-09-07T00:00:00 and 2018-09-08T00:00:00
+INFO:root:Query: SDAC | Hinode | EIS between 2021-01-07T11:54:57.107765 and 2021-01-08T11:54:57.107765
+INFO:root:Query: SDAC | Hinode | SOT between 2018-10-17T14:19:09.302465 and 2018-10-18T14:19:09.302465
+INFO:root:Random query failed. Trying known query: SDAC | Hinode | SOT between 2011-02-04T05:57:10.206853 and 2011-02-07T05:57:10.206853
+INFO:root:Query: SDAC | SDO | AIA between 2014-01-26T12:54:11.724723 and 2014-01-27T12:54:11.724723
+INFO:root:Random query failed. No known query for: SDAC | SDO | AIA
+INFO:root:Query: SDAC | SO | EUI between 2020-09-26T14:20:06.768206 and 2020-09-27T14:20:06.768206
+INFO:root:Random query failed. Trying known query: SDAC | SO | EUI between 2021-02-08T09:44:47.649699 and 2021-02-11T09:44:47.649699
+INFO:root:Query: SDAC | SOHO | CDS between 2001-09-24T18:35:51.700695 and 2001-09-25T18:35:51.700695
+INFO:root:Random query failed. Trying known query: SDAC | SOHO | CDS between 2000-03-06T19:38:20.393845 and 2000-03-09T19:38:20.393845
+INFO:root:Query: SDAC | SOHO | CELIAS between 2002-09-19T21:50:59.309657 and 2002-09-20T21:50:59.309657
+INFO:root:Query: SDAC | SOHO | COSTEP between 2012-03-25T02:20:34.872949 and 2012-03-26T02:20:34.872949
+INFO:root:Query: SDAC | SOHO | EIT between 2001-11-07T20:23:05.665066 and 2001-11-08T20:23:05.665066
+INFO:root:Query: SDAC | SOHO | ERNE between 2005-12-24T06:16:58.644617 and 2005-12-25T06:16:58.644617
+INFO:root:Query: SDAC | SOHO | GOLF between 2007-08-08T08:54:15.726827 and 2007-08-09T08:54:15.726827
+INFO:root:Query: SDAC | SOHO | LASCO between 2004-10-20T13:47:59.650719 and 2004-10-21T13:47:59.650719
+INFO:root:Query: SDAC | SOHO | SUMER between 2003-07-15T23:18:59.367151 and 2003-07-16T23:18:59.367151
+INFO:root:Random query failed. Trying known query: SDAC | SOHO | SUMER between 1996-08-29T00:53:33.446269 and 1996-09-01T00:53:33.446269
+INFO:root:Query: SDAC | SOHO | SWAN between 2011-04-09T13:17:43.673466 and 2011-04-10T13:17:43.673466
+INFO:root:Query: SDAC | SOHO | UVCS between 2009-06-26T03:08:43.146644 and 2009-06-27T03:08:43.146644
+INFO:root:Query: SDAC | SOHO | VIRGO between 1997-01-26T18:43:00.378906 and 1997-01-27T18:43:00.378906
+INFO:root:Query: SDAC | TRACE | TRACE between 2001-06-21T11:11:54.248029 and 2001-06-22T11:11:54.248029
+INFO:root:Query: SDAC | VAULT | VAULT-1999 between 1999-05-07T00:00:00 and 1999-05-08T00:00:00
+INFO:root:Query: SDAC | VAULT | VAULT-2002 between 2002-06-14T00:00:00 and 2002-06-15T00:00:00
+INFO:root:Query: SDAC | VAULT | VAULT-2014 between 2014-09-30T00:00:00 and 2014-10-01T00:00:00
+INFO:root:Query: SFO | SFO | CFTD1 between 2003-02-05T04:54:00.443000 and 2003-02-06T04:54:00.443000
+INFO:root:Random query failed. No known query for: SFO | SFO | CFTD1
+INFO:root:Query: SFO | SFO | CFTD2 between 2013-03-08T13:40:30.480847 and 2013-03-09T13:40:30.480847
+INFO:root:Random query failed. No known query for: SFO | SFO | CFTD2
+INFO:root:Query: SHA | SOHO | MDI between 2002-08-06T16:28:47.619089 and 2002-08-07T16:28:47.619089
+INFO:root:Query: SSC | STEREO_A | IMPACT between 2019-04-17T10:57:06.858658 and 2019-04-18T10:57:06.858658
+INFO:root:Query: SSC | STEREO_A | PLASTIC between 2013-06-18T19:26:12.163712 and 2013-06-19T19:26:12.163712
+INFO:root:Query: SSC | STEREO_A | SECCHI between 2019-07-16T17:09:02.115493 and 2019-07-17T17:09:02.115493
+INFO:root:Query: SSC | STEREO_A | SWAVES between 2011-09-18T11:12:05.844907 and 2011-09-19T11:12:05.844907
+INFO:root:Query: SSC | STEREO_B | IMPACT between 2015-07-15T01:16:48.506572 and 2015-07-16T01:16:48.506572
+INFO:root:Random query failed. Trying known query: SSC | STEREO_B | IMPACT between 2007-10-02T17:02:57.364076 and 2007-10-05T17:02:57.364076
+INFO:root:Query: SSC | STEREO_B | PLASTIC between 2016-09-12T19:31:26.094292 and 2016-09-13T19:31:26.094292
+INFO:root:Query: SSC | STEREO_B | SECCHI between 2008-04-07T22:13:08.902746 and 2008-04-08T22:13:08.902746
+INFO:root:Query: SSC | STEREO_B | SWAVES between 2017-11-02T23:08:16.810132 and 2017-11-03T23:08:16.810132
+INFO:root:Random query failed. Trying known query: SSC | STEREO_B | SWAVES between 2012-07-03T12:00:41.251319 and 2012-07-06T12:00:41.251319

@@ -1,0 +1,153 @@
+INFO:root:Query: HAO | MLSO | K-Cor between 2017-10-08T07:31:02.156786 and 2017-10-09T07:31:02.156786
+WARNING:sunpy:SunpyDeprecationWarning: The default response format from the VSO client will be changing to 'table' in version 3.1. To remove this warning set response_format='legacy' to maintain the old behaviour or response_format='table' to use the new behaviour.
+WARNING:sunpy:SunpyUserWarning: VSO-C500 :soap:Server.Transport : 503 Service Unavailable
+INFO:root:Random query failed. No known query for: HAO | MLSO | K-Cor
+INFO:root:Query: HAO | MLSO | chp between 2012-07-18T18:15:18.469625 and 2012-07-19T18:15:18.469625
+INFO:root:Random query failed. No known query for: HAO | MLSO | chp
+INFO:root:Query: HAO | MLSO | dpm between 2002-11-16T12:55:37.186379 and 2002-11-17T12:55:37.186379
+INFO:root:Random query failed. No known query for: HAO | MLSO | dpm
+INFO:root:Query: HAO | MLSO | mk4 between 2005-12-29T01:35:00.743881 and 2005-12-30T01:35:00.743881
+INFO:root:Random query failed. No known query for: HAO | MLSO | mk4
+INFO:root:Query: HAO | SMM | cp between 1981-03-17T03:53:53.693183 and 1981-03-18T03:53:53.693183
+INFO:root:Random query failed. No known query for: HAO | SMM | cp
+INFO:root:Query: INAF-OACT | OACT | BE-Continuum between 2019-11-16T10:30:14.729634 and 2019-11-17T10:30:14.729634
+WARNING:sunpy:SunpyDeprecationWarning: The default response format from the VSO client will be changing to 'table' in version 3.1. To remove this warning set response_format='legacy' to maintain the old behaviour or response_format='table' to use the new behaviour.
+INFO:root:Random query failed. Trying known query: INAF-OACT | OACT | BE-Continuum between 2020-07-06T18:08:42.201007 and 2020-07-09T18:08:42.201007
+INFO:root:Query: INAF-OACT | OACT | BE-Halpha between 2020-08-19T04:56:23.735221 and 2020-08-20T04:56:23.735221
+INFO:root:Random query failed. Trying known query: INAF-OACT | OACT | BE-Halpha between 2021-04-19T15:11:35.576707 and 2021-04-22T15:11:35.576707
+INFO:root:Query: INAF-OACT | OACT | Cooke-Refractor between 2018-11-11T06:34:37.120709 and 2018-11-12T06:34:37.120709
+INFO:root:Random query failed. No known query for: INAF-OACT | OACT | Cooke-Refractor
+INFO:root:Query: JSOC | SDO | AIA between 2014-10-03T01:19:30.645680 and 2014-10-04T01:19:30.645680
+INFO:root:Query: JSOC | SDO | HMI between 2014-11-09T12:48:02.076886 and 2014-11-10T12:48:02.076886
+INFO:root:Query: KIS | ChroTel | ChroTel between 2012-08-21T02:19:19.787821 and 2012-08-22T02:19:19.787821
+INFO:root:Random query failed. No known query for: KIS | ChroTel | ChroTel
+INFO:root:Query: KSO | KSO | CAII between 2014-09-27T00:10:55.655967 and 2014-09-28T00:10:55.655967
+WARNING:sunpy:SunpyUserWarning: VSO-D505 Version not supported
+INFO:root:Random query failed. No known query for: KSO | KSO | CAII
+INFO:root:Query: KSO | KSO | FILM between 1974-02-09T09:49:56.176717 and 1974-02-10T09:49:56.176717
+INFO:root:Random query failed. No known query for: KSO | KSO | FILM
+INFO:root:Query: KSO | KSO | HA2 between 2016-11-20T19:01:35.524853 and 2016-11-21T19:01:35.524853
+INFO:root:Random query failed. No known query for: KSO | KSO | HA2
+INFO:root:Query: KSO | KSO | KPDC between 2016-09-10T01:34:47.279128 and 2016-09-11T01:34:47.279128
+INFO:root:Random query failed. No known query for: KSO | KSO | KPDC
+INFO:root:Query: KSO | KSO | PHOKA between 1995-12-09T13:50:11.824856 and 1995-12-10T13:50:11.824856
+INFO:root:Random query failed. No known query for: KSO | KSO | PHOKA
+INFO:root:Query: KSO | KSO | TM-1001 between 2004-03-18T21:51:09.396720 and 2004-03-19T21:51:09.396720
+INFO:root:Random query failed. No known query for: KSO | KSO | TM-1001
+INFO:root:Query: KSO | KSO | TM-1010 between 2006-07-28T13:58:01.474224 and 2006-07-29T13:58:01.474224
+INFO:root:Random query failed. No known query for: KSO | KSO | TM-1010
+INFO:root:Query: LASP | MINXSS1 | X123 between 2016-09-29T11:52:54.344408 and 2016-09-30T11:52:54.344408
+INFO:root:Query: LASP | SDO | EVE between 2012-11-13T16:12:35.850711 and 2012-11-14T16:12:35.850711
+INFO:root:Query: LMSAL | IRIS | IRIS between 2016-01-31T11:46:09.330655 and 2016-02-01T11:46:09.330655
+INFO:root:Query: LSSP | RHESSI | RHESSI between 2010-10-23T22:09:29.766259 and 2010-10-24T22:09:29.766259
+INFO:root:Query: MSFC | CLASP2 | SJ between 2019-04-11T00:00:00 and 2019-04-12T00:00:00
+INFO:root:Query: MSFC | CLASP2 | SP1 between 2019-04-11T00:00:00 and 2019-04-12T00:00:00
+INFO:root:Query: MSFC | CLASP2 | SP2 between 2019-04-11T00:00:00 and 2019-04-12T00:00:00
+INFO:root:Query: MSFC | HI-C | HI-C between 2012-07-11T00:00:00 and 2012-07-12T00:00:00
+INFO:root:Query: MSFC | HI-C21 | HI-C21 between 2018-05-29T00:00:00 and 2018-05-30T00:00:00
+INFO:root:Query: MSU | YOHKOH | BCS between 1996-04-25T00:06:55.204772 and 1996-04-26T00:06:55.204772
+WARNING:sunpy:SunpyUserWarning: VSO-C500 :soap:Server.Transport : 500 Internal Server Error
+INFO:root:Random query failed. No known query for: MSU | YOHKOH | BCS
+INFO:root:Query: MSU | YOHKOH | HXT between 1996-04-12T16:53:09.754867 and 1996-04-13T16:53:09.754867
+INFO:root:Random query failed. No known query for: MSU | YOHKOH | HXT
+INFO:root:Query: MSU | YOHKOH | SXT between 1993-07-08T22:57:59.791554 and 1993-07-09T22:57:59.791554
+INFO:root:Random query failed. No known query for: MSU | YOHKOH | SXT
+INFO:root:Query: MSU | YOHKOH | WBS between 1993-12-04T02:36:26.134110 and 1993-12-05T02:36:26.134110
+INFO:root:Random query failed. No known query for: MSU | YOHKOH | WBS
+INFO:root:Query: MWSPADP | MtWilson | 60-ft SHG between 1921-09-27T13:23:27.584168 and 1921-09-28T13:23:27.584168
+INFO:root:Query: NGDC | GOES-12 | SXI-0 between 2021-02-09T12:46:58.854115 and 2021-02-10T12:46:58.854115
+WARNING:sunpy:SunpyUserWarning: VSO-D503 Unavailable - Not able to access NGDC at this time.  We are working on a solution
+INFO:root:Random query failed. No known query for: NGDC | GOES-12 | SXI-0
+INFO:root:Query: NOAA | GOES16 | SUVI between 2018-04-14T17:14:57.363460 and 2018-04-15T17:14:57.363460
+INFO:root:Random query failed. Trying known query: NOAA | GOES16 | SUVI between 2021-07-30T12:26:31.103199 and 2021-08-02T12:26:31.103199
+INFO:root:Query: NOAA | GOES17 | SUVI between 2020-07-17T19:27:00.459988 and 2020-07-18T19:27:00.459988
+INFO:root:Query: NRL | PSP | WISPR between 2020-12-30T16:39:33.199270 and 2020-12-31T16:39:33.199270
+INFO:root:Random query failed. Trying known query: NRL | PSP | WISPR between 2019-12-19T06:03:51.115948 and 2019-12-22T06:03:51.115948
+INFO:root:Query: NSO | Evans | spectroheliograph between 1998-10-03T23:38:59.827139 and 1998-10-04T23:38:59.827139
+INFO:root:Random query failed. Trying known query: NSO | Evans | spectroheliograph between 1996-02-26T00:23:31.454907 and 1996-02-29T00:23:31.454907
+INFO:root:Query: NSO | GONG | Big Bear between 2008-07-08T18:20:14.375134 and 2008-07-09T18:20:14.375134
+INFO:root:Query: NSO | GONG | Cerro Tololo between 2016-01-24T10:03:02.689411 and 2016-01-25T10:03:02.689411
+INFO:root:Query: NSO | GONG | El Teide between 2011-10-20T17:58:09.317732 and 2011-10-21T17:58:09.317732
+INFO:root:Query: NSO | GONG | Learmonth between 2006-07-15T01:37:18.180007 and 2006-07-16T01:37:18.180007
+INFO:root:Random query failed. Trying known query: NSO | GONG | Learmonth between 2009-10-04T10:26:44.091173 and 2009-10-07T10:26:44.091173
+INFO:root:Query: NSO | GONG | MERGED GONG between 2006-09-14T08:14:41.072354 and 2006-09-15T08:14:41.072354
+INFO:root:Query: NSO | GONG | Mauna Loa between 2008-03-12T00:15:29.501997 and 2008-03-13T00:15:29.501997
+INFO:root:Query: NSO | GONG | Udaipur between 2014-01-16T01:42:26.000550 and 2014-01-17T01:42:26.000550
+INFO:root:Query: NSO | HXECLIPSE | HXECLIPSE between 1958-06-07T04:22:19.111204 and 1958-06-08T04:22:19.111204
+INFO:root:Random query failed. No known query for: NSO | HXECLIPSE | HXECLIPSE
+INFO:root:Query: NSO | ISOON | ISOON between 2008-10-02T18:25:46.685852 and 2008-10-03T18:25:46.685852
+INFO:root:Query: NSO | IVM | IVM between 2002-02-21T10:04:49.933734 and 2002-02-22T10:04:49.933734
+INFO:root:Query: NSO | KPVT | 512-channel magnetograph between 1981-07-10T23:09:36.918727 and 1981-07-11T23:09:36.918727
+INFO:root:Random query failed. Trying known query: NSO | KPVT | 512-channel magnetograph between 1984-01-15T09:04:30.088298 and 1984-01-18T09:04:30.088298
+INFO:root:Query: NSO | KPVT | spectromagnetograph between 1993-06-02T01:01:40.791597 and 1993-06-03T01:01:40.791597
+INFO:root:Query: NSO | McMath | solar fts spectrometer between 1989-04-30T16:28:47.862223 and 1989-05-01T16:28:47.862223
+INFO:root:Random query failed. Trying known query: NSO | McMath | solar fts spectrometer between 1992-09-21T15:57:45.551974 and 1992-09-24T15:57:45.551974
+INFO:root:Query: NSO | PTMC | PTMC between 1973-12-24T16:43:35.970811 and 1973-12-25T16:43:35.970811
+INFO:root:Random query failed. Trying known query: NSO | PTMC | PTMC between 1997-11-26T06:01:49.439688 and 1997-11-29T06:01:49.439688
+INFO:root:Query: NSO | SDO | HMI between 2011-08-17T19:03:52.383607 and 2011-08-18T19:03:52.383607
+INFO:root:Query: NSO | SOLIS | ISS between 2008-06-16T08:01:46.795190 and 2008-06-17T08:01:46.795190
+INFO:root:Random query failed. Trying known query: NSO | SOLIS | ISS between 2010-03-07T15:35:26.899226 and 2010-03-10T15:35:26.899226
+INFO:root:Query: NSO | SOLIS | vsm between 2008-06-06T12:59:34.620991 and 2008-06-07T12:59:34.620991
+INFO:root:Query: NWRA | MCCD | MEES between 2003-04-25T03:16:18.066826 and 2003-04-26T03:16:18.066826
+INFO:root:Random query failed. Trying known query: NWRA | MCCD | MEES between 2003-02-26T07:48:00.344230 and 2003-03-01T07:48:00.344230
+INFO:root:Query: OBSPM | OBSPM | Meudon Spectroheliograph between 2020-11-27T18:19:42.353951 and 2020-11-28T18:19:42.353951
+INFO:root:Query: OMP | OMP | CLIMSO between 2012-02-01T13:50:48.543115 and 2012-02-02T13:50:48.543115
+INFO:root:Random query failed. Trying known query: OMP | OMP | CLIMSO between 2015-05-31T08:43:03.176104 and 2015-06-03T08:43:03.176104
+INFO:root:Query: OVRO | OVRO | OVSA between 2013-12-01T09:40:12.086997 and 2013-12-02T09:40:12.086997
+WARNING:sunpy:SunpyUserWarning: VSO-C500 :soap:Server.Transport : 404 Not Found
+INFO:root:Random query failed. No known query for: OVRO | OVRO | OVSA
+INFO:root:Query: ROB | PROBA2 | SWAP between 2021-06-14T13:02:19.002481 and 2021-06-15T13:02:19.002481
+INFO:root:Query: SAO | Hinode | XRT between 2008-07-23T13:10:01.035619 and 2008-07-24T13:10:01.035619
+WARNING:sunpy:SunpyUserWarning: VSO-C500 :soap:Server.Transport : 411 Length Required
+INFO:root:Random query failed. No known query for: SAO | Hinode | XRT
+INFO:root:Query: SDAC | EUNIS | LONGWAVE-LOBE-06 between 2006-04-12T00:00:00 and 2006-04-13T00:00:00
+INFO:root:Query: SDAC | EUNIS | LONGWAVE-LOBE-07 between 2007-11-06T00:00:00 and 2007-11-07T00:00:00
+INFO:root:Query: SDAC | EUNIS | LONGWAVE-SLIT-06 between 2006-04-12T00:00:00 and 2006-04-13T00:00:00
+INFO:root:Query: SDAC | EUNIS | LONGWAVE-SLIT-07 between 2007-11-06T00:00:00 and 2007-11-07T00:00:00
+INFO:root:Query: SDAC | EUNIS | SHORTWAVE-LOBE-06 between 2006-04-12T00:00:00 and 2006-04-13T00:00:00
+INFO:root:Query: SDAC | EUNIS | SHORTWAVE-LOBE-07 between 2007-11-06T00:00:00 and 2007-11-07T00:00:00
+INFO:root:Query: SDAC | EUNIS | SHORTWAVE-SLIT-06 between 2006-04-12T00:00:00 and 2006-04-13T00:00:00
+INFO:root:Query: SDAC | EUNIS | SHORTWAVE-SLIT-07 between 2007-11-06T00:00:00 and 2007-11-07T00:00:00
+INFO:root:Query: SDAC | FOXSI1 | FOXSI between 2012-11-02T00:00:00 and 2012-11-03T00:00:00
+INFO:root:Query: SDAC | FOXSI2 | FOXSI between 2014-12-11T00:00:00 and 2014-12-12T00:00:00
+INFO:root:Query: SDAC | FOXSI3 | FOXSI between 2018-09-07T00:00:00 and 2018-09-08T00:00:00
+INFO:root:Query: SDAC | FOXSI3 | PHOENIX between 2018-09-07T00:00:00 and 2018-09-08T00:00:00
+INFO:root:Query: SDAC | Hinode | EIS between 2018-11-02T07:36:49.253031 and 2018-11-03T07:36:49.253031
+INFO:root:Query: SDAC | Hinode | SOT between 2007-11-02T08:36:26.557711 and 2007-11-03T08:36:26.557711
+INFO:root:Query: SDAC | SDO | AIA between 2021-10-10T05:55:24.683753 and 2021-10-11T05:55:24.683753
+INFO:root:Random query failed. No known query for: SDAC | SDO | AIA
+INFO:root:Query: SDAC | SO | EUI between 2020-09-28T21:19:14.729450 and 2020-09-29T21:19:14.729450
+INFO:root:Random query failed. Trying known query: SDAC | SO | EUI between 2021-02-08T09:44:47.649699 and 2021-02-11T09:44:47.649699
+INFO:root:Query: SDAC | SOHO | CDS between 2013-12-02T16:56:42.893718 and 2013-12-03T16:56:42.893718
+INFO:root:Random query failed. Trying known query: SDAC | SOHO | CDS between 2000-03-06T19:38:20.393845 and 2000-03-09T19:38:20.393845
+INFO:root:Query: SDAC | SOHO | CELIAS between 2017-07-19T17:30:42.821689 and 2017-07-20T17:30:42.821689
+INFO:root:Query: SDAC | SOHO | COSTEP between 2009-12-20T17:15:05.974068 and 2009-12-21T17:15:05.974068
+INFO:root:Query: SDAC | SOHO | EIT between 1996-09-02T02:13:31.863712 and 1996-09-03T02:13:31.863712
+INFO:root:Query: SDAC | SOHO | ERNE between 2016-04-29T08:40:54.562201 and 2016-04-30T08:40:54.562201
+INFO:root:Query: SDAC | SOHO | GOLF between 2009-05-12T05:19:54.895693 and 2009-05-13T05:19:54.895693
+INFO:root:Query: SDAC | SOHO | LASCO between 1997-05-11T15:32:58.839842 and 1997-05-12T15:32:58.839842
+INFO:root:Query: SDAC | SOHO | SUMER between 2010-08-23T01:57:10.342306 and 2010-08-24T01:57:10.342306
+INFO:root:Query: SDAC | SOHO | SWAN between 2004-11-19T06:24:57.236388 and 2004-11-20T06:24:57.236388
+INFO:root:Query: SDAC | SOHO | UVCS between 2000-11-25T06:27:09.626392 and 2000-11-26T06:27:09.626392
+INFO:root:Query: SDAC | SOHO | VIRGO between 2020-04-24T07:06:43.114508 and 2020-04-25T07:06:43.114508
+INFO:root:Query: SDAC | TRACE | TRACE between 2004-06-08T02:07:14.980116 and 2004-06-09T02:07:14.980116
+INFO:root:Query: SDAC | VAULT | VAULT-1999 between 1999-05-07T00:00:00 and 1999-05-08T00:00:00
+INFO:root:Query: SDAC | VAULT | VAULT-2002 between 2002-06-14T00:00:00 and 2002-06-15T00:00:00
+INFO:root:Query: SDAC | VAULT | VAULT-2014 between 2014-09-30T00:00:00 and 2014-10-01T00:00:00
+INFO:root:Query: SFO | SFO | CFTD1 between 1986-12-14T13:03:19.190383 and 1986-12-15T13:03:19.190383
+INFO:root:Random query failed. No known query for: SFO | SFO | CFTD1
+INFO:root:Query: SFO | SFO | CFTD2 between 2003-06-16T05:26:41.621076 and 2003-06-17T05:26:41.621076
+INFO:root:Random query failed. No known query for: SFO | SFO | CFTD2
+INFO:root:Query: SHA | SOHO | MDI between 1999-02-13T20:54:08.912284 and 1999-02-14T20:54:08.912284
+INFO:root:Random query failed. Trying known query: SHA | SOHO | MDI between 2001-10-29T07:34:41.804836 and 2001-11-01T07:34:41.804836
+INFO:root:Query: SSC | STEREO_A | IMPACT between 2019-02-22T11:31:13.850469 and 2019-02-23T11:31:13.850469
+INFO:root:Query: SSC | STEREO_A | PLASTIC between 2006-10-13T21:05:12.583263 and 2006-10-14T21:05:12.583263
+INFO:root:Query: SSC | STEREO_A | SECCHI between 2010-05-13T12:46:36.913373 and 2010-05-14T12:46:36.913373
+INFO:root:Query: SSC | STEREO_A | SWAVES between 2017-06-14T20:16:57.122194 and 2017-06-15T20:16:57.122194
+INFO:root:Query: SSC | STEREO_B | IMPACT between 2017-02-28T13:05:43.116434 and 2017-03-01T13:05:43.116434
+INFO:root:Random query failed. Trying known query: SSC | STEREO_B | IMPACT between 2007-10-02T17:02:57.364076 and 2007-10-05T17:02:57.364076
+INFO:root:Query: SSC | STEREO_B | PLASTIC between 2018-06-28T12:09:21.905396 and 2018-06-29T12:09:21.905396
+INFO:root:Query: SSC | STEREO_B | SECCHI between 2018-01-21T14:33:18.821021 and 2018-01-22T14:33:18.821021
+INFO:root:Random query failed. Trying known query: SSC | STEREO_B | SECCHI between 2007-07-05T21:37:58.856810 and 2007-07-08T21:37:58.856810
+INFO:root:Query: SSC | STEREO_B | SWAVES between 2017-11-24T13:49:27.183677 and 2017-11-25T13:49:27.183677
+INFO:root:Random query failed. Trying known query: SSC | STEREO_B | SWAVES between 2012-07-03T12:00:41.251319 and 2012-07-06T12:00:41.251319

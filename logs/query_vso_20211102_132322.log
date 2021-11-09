@@ -1,0 +1,98 @@
+INFO:root:Query: HAO | MLSO | K-Cor between 2019-12-01T23:16:57.037580 and 2019-12-02T23:16:57.037580
+WARNING:sunpy:SunpyDeprecationWarning: The default response format from the VSO client will be changing to 'table' in version 3.1. To remove this warning set response_format='legacy' to maintain the old behaviour or response_format='table' to use the new behaviour.
+WARNING:sunpy:SunpyUserWarning: VSO-C500 :soap:Server.Transport : 503 Service Unavailable
+INFO:root:Random query failed. No known query for: HAO | MLSO | K-Cor
+INFO:root:Query: HAO | MLSO | chp between 2006-05-22T06:03:58.963086 and 2006-05-23T06:03:58.963086
+INFO:root:Random query failed. No known query for: HAO | MLSO | chp
+INFO:root:Query: HAO | MLSO | dpm between 2004-06-30T22:27:46.354304 and 2004-07-01T22:27:46.354304
+INFO:root:Random query failed. No known query for: HAO | MLSO | dpm
+INFO:root:Query: HAO | MLSO | mk4 between 1999-04-08T12:27:50.161416 and 1999-04-09T12:27:50.161416
+INFO:root:Random query failed. No known query for: HAO | MLSO | mk4
+INFO:root:Query: HAO | SMM | cp between 1981-11-19T02:02:51.061608 and 1981-11-20T02:02:51.061608
+INFO:root:Random query failed. No known query for: HAO | SMM | cp
+INFO:root:Query: INAF-OACT | OACT | BE-Continuum between 2018-02-07T06:55:04.272751 and 2018-02-08T06:55:04.272751
+INFO:parfive:http://ssa.oact.inaf.it/oact/data/fits/2018/02/07/oact_hared_fi_20180207_091331.fts failed to download with exception
+Download Failed: http://ssa.oact.inaf.it/oact/data/fits/2018/02/07/oact_hared_fi_20180207_091331.fts with error <ClientResponse(http://ssa.oact.inaf.it/oact/data/fits/2018/02/07/oact_hared_fi_20180207_091331.fts) [404 Not Found]>
+<CIMultiDictProxy('Date': 'Tue, 02 Nov 2021 17:23:36 GMT', 'Server': 'Apache/2.4.18 (Ubuntu)', 'Content-Length': '278', 'Content-Type': 'text/html; charset=iso-8859-1')>
+
+INFO:root:Query: INAF-OACT | OACT | BE-Halpha between 2021-01-01T14:12:02.852611 and 2021-01-02T14:12:02.852611
+WARNING:sunpy:SunpyDeprecationWarning: The default response format from the VSO client will be changing to 'table' in version 3.1. To remove this warning set response_format='legacy' to maintain the old behaviour or response_format='table' to use the new behaviour.
+WARNING:sunpy:SunpyDeprecationWarning: The default response format from the VSO client will be changing to 'table' in version 3.1. To remove this warning set response_format='legacy' to maintain the old behaviour or response_format='table' to use the new behaviour.
+INFO:root:Random query failed. Trying known query: INAF-OACT | OACT | BE-Halpha between 2021-04-19T15:11:35.576707 and 2021-04-22T15:11:35.576707
+INFO:root:Query: INAF-OACT | OACT | Cooke-Refractor between 2016-05-22T03:47:19.876888 and 2016-05-23T03:47:19.876888
+INFO:root:Random query failed. No known query for: INAF-OACT | OACT | Cooke-Refractor
+INFO:root:Query: JSOC | SDO | AIA between 2013-04-14T06:00:18.698341 and 2013-04-15T06:00:18.698341
+INFO:parfive:https://sdo7.nascom.nasa.gov/cgi-bin/drms_export.cgi?series=aia__lev1;compress=rice;record=193_1144994455-1144994995 failed to download with exception
+Timeout on reading data from socket
+INFO:root:Query: JSOC | SDO | HMI between 2016-01-17T18:02:26.896431 and 2016-01-18T18:02:26.896431
+WARNING:sunpy:SunpyDeprecationWarning: The default response format from the VSO client will be changing to 'table' in version 3.1. To remove this warning set response_format='legacy' to maintain the old behaviour or response_format='table' to use the new behaviour.
+INFO:parfive:https://sdo7.nascom.nasa.gov/cgi-bin/drms_export.cgi?series=hmi__Ic_45s;compress=rice;record=16160165-16160199 failed to download with exception
+Timeout on reading data from socket
+INFO:root:Query: KIS | ChroTel | ChroTel between 2015-01-17T06:24:04.665421 and 2015-01-18T06:24:04.665421
+WARNING:sunpy:SunpyDeprecationWarning: The default response format from the VSO client will be changing to 'table' in version 3.1. To remove this warning set response_format='legacy' to maintain the old behaviour or response_format='table' to use the new behaviour.
+INFO:root:Random query failed. No known query for: KIS | ChroTel | ChroTel
+INFO:root:Query: KSO | KSO | CAII between 2011-08-02T05:08:33.641173 and 2011-08-03T05:08:33.641173
+WARNING:sunpy:SunpyUserWarning: VSO-D505 Version not supported
+INFO:root:Random query failed. No known query for: KSO | KSO | CAII
+INFO:root:Query: KSO | KSO | FILM between 1986-06-06T10:57:29.630478 and 1986-06-07T10:57:29.630478
+INFO:root:Random query failed. No known query for: KSO | KSO | FILM
+INFO:root:Query: KSO | KSO | HA2 between 2016-09-30T19:22:16.237642 and 2016-10-01T19:22:16.237642
+INFO:root:Random query failed. No known query for: KSO | KSO | HA2
+INFO:root:Query: KSO | KSO | KPDC between 2020-09-09T16:34:44.918678 and 2020-09-10T16:34:44.918678
+INFO:root:Random query failed. No known query for: KSO | KSO | KPDC
+INFO:root:Query: KSO | KSO | PHOKA between 2005-09-07T04:21:29.417888 and 2005-09-08T04:21:29.417888
+INFO:root:Random query failed. No known query for: KSO | KSO | PHOKA
+INFO:root:Query: KSO | KSO | TM-1001 between 1999-03-30T20:10:34.590987 and 1999-03-31T20:10:34.590987
+INFO:root:Random query failed. No known query for: KSO | KSO | TM-1001
+INFO:root:Query: KSO | KSO | TM-1010 between 2007-06-08T07:08:00.325072 and 2007-06-09T07:08:00.325072
+INFO:root:Random query failed. No known query for: KSO | KSO | TM-1010
+INFO:root:Query: LASP | MINXSS1 | X123 between 2016-08-08T02:03:07.919486 and 2016-08-09T02:03:07.919486
+INFO:root:Query: LASP | SDO | EVE between 2017-06-16T09:08:09.888338 and 2017-06-17T09:08:09.888338
+WARNING:sunpy:SunpyDeprecationWarning: The default response format from the VSO client will be changing to 'table' in version 3.1. To remove this warning set response_format='legacy' to maintain the old behaviour or response_format='table' to use the new behaviour.
+INFO:parfive:http://lasp.colorado.edu/eve/data_access/evewebdataproducts/level1/esp/2017/esp_L1_2017167_006.fit failed to download with exception
+Download Failed: http://lasp.colorado.edu/eve/data_access/evewebdataproducts/level1/esp/2017/esp_L1_2017167_006.fit with error <ClientResponse(https://lasp.colorado.edu/eve/data_access/evewebdataproducts/level1/esp/2017/esp_L1_2017167_006.fit) [404 Not Found]>
+<CIMultiDictProxy('Content-Type': 'text/html; charset=iso-8859-1', 'Content-Length': '196', 'Connection': 'keep-alive', 'Date': 'Tue, 02 Nov 2021 17:27:26 GMT', 'Server': 'Apache/2.4.41 (Unix) OpenSSL/1.0.2k-fips PHP/7.4.0', 'Set-Cookie': 'HttpOnly')>
+
+INFO:root:Query: LMSAL | IRIS | IRIS between 2014-04-05T10:00:07.690454 and 2014-04-06T10:00:07.690454
+WARNING:sunpy:SunpyDeprecationWarning: The default response format from the VSO client will be changing to 'table' in version 3.1. To remove this warning set response_format='legacy' to maintain the old behaviour or response_format='table' to use the new behaviour.
+INFO:root:Query: LSSP | RHESSI | RHESSI between 2002-02-18T23:49:50.363317 and 2002-02-19T23:49:50.363317
+WARNING:sunpy:SunpyDeprecationWarning: The default response format from the VSO client will be changing to 'table' in version 3.1. To remove this warning set response_format='legacy' to maintain the old behaviour or response_format='table' to use the new behaviour.
+INFO:root:Query: MSFC | CLASP2 | SJ between 2019-04-11T00:00:00 and 2019-04-12T00:00:00
+WARNING:sunpy:SunpyDeprecationWarning: The default response format from the VSO client will be changing to 'table' in version 3.1. To remove this warning set response_format='legacy' to maintain the old behaviour or response_format='table' to use the new behaviour.
+INFO:root:Query: MSFC | CLASP2 | SP1 between 2019-04-11T00:00:00 and 2019-04-12T00:00:00
+WARNING:sunpy:SunpyDeprecationWarning: The default response format from the VSO client will be changing to 'table' in version 3.1. To remove this warning set response_format='legacy' to maintain the old behaviour or response_format='table' to use the new behaviour.
+INFO:root:Query: MSFC | CLASP2 | SP2 between 2019-04-11T00:00:00 and 2019-04-12T00:00:00
+WARNING:sunpy:SunpyDeprecationWarning: The default response format from the VSO client will be changing to 'table' in version 3.1. To remove this warning set response_format='legacy' to maintain the old behaviour or response_format='table' to use the new behaviour.
+INFO:root:Query: MSFC | HI-C | HI-C between 2012-07-11T00:00:00 and 2012-07-12T00:00:00
+WARNING:sunpy:SunpyDeprecationWarning: The default response format from the VSO client will be changing to 'table' in version 3.1. To remove this warning set response_format='legacy' to maintain the old behaviour or response_format='table' to use the new behaviour.
+INFO:root:Query: MSFC | HI-C21 | HI-C21 between 2018-05-29T00:00:00 and 2018-05-30T00:00:00
+WARNING:sunpy:SunpyDeprecationWarning: The default response format from the VSO client will be changing to 'table' in version 3.1. To remove this warning set response_format='legacy' to maintain the old behaviour or response_format='table' to use the new behaviour.
+INFO:root:Query: MSU | YOHKOH | BCS between 1995-08-29T23:14:04.558578 and 1995-08-30T23:14:04.558578
+WARNING:sunpy:SunpyDeprecationWarning: The default response format from the VSO client will be changing to 'table' in version 3.1. To remove this warning set response_format='legacy' to maintain the old behaviour or response_format='table' to use the new behaviour.
+WARNING:sunpy:SunpyUserWarning: VSO-C500 :soap:Server.Transport : 500 Internal Server Error
+INFO:root:Random query failed. No known query for: MSU | YOHKOH | BCS
+INFO:root:Query: MSU | YOHKOH | HXT between 1999-01-15T03:42:30.907793 and 1999-01-16T03:42:30.907793
+INFO:root:Random query failed. No known query for: MSU | YOHKOH | HXT
+INFO:root:Query: MSU | YOHKOH | SXT between 1999-01-01T16:09:04.785844 and 1999-01-02T16:09:04.785844
+INFO:root:Random query failed. No known query for: MSU | YOHKOH | SXT
+INFO:root:Query: MSU | YOHKOH | WBS between 1998-05-28T19:39:35.229040 and 1998-05-29T19:39:35.229040
+INFO:root:Random query failed. No known query for: MSU | YOHKOH | WBS
+INFO:root:Query: MWSPADP | MtWilson | 60-ft SHG between 1956-08-07T23:39:03.690098 and 1956-08-08T23:39:03.690098
+INFO:root:Query: NGDC | GOES-12 | SXI-0 between 2012-11-14T15:10:51.247392 and 2012-11-15T15:10:51.247392
+WARNING:sunpy:SunpyDeprecationWarning: The default response format from the VSO client will be changing to 'table' in version 3.1. To remove this warning set response_format='legacy' to maintain the old behaviour or response_format='table' to use the new behaviour.
+WARNING:sunpy:SunpyUserWarning: VSO-D503 Unavailable - Not able to access NGDC at this time.  We are working on a solution
+INFO:root:Random query failed. No known query for: NGDC | GOES-12 | SXI-0
+INFO:root:Query: NOAA | GOES16 | SUVI between 2018-12-15T21:11:27.990562 and 2018-12-16T21:11:27.990562
+INFO:root:Query: NOAA | GOES17 | SUVI between 2019-03-10T15:57:01.859777 and 2019-03-11T15:57:01.859777
+WARNING:sunpy:SunpyDeprecationWarning: The default response format from the VSO client will be changing to 'table' in version 3.1. To remove this warning set response_format='legacy' to maintain the old behaviour or response_format='table' to use the new behaviour.
+INFO:root:Query: NRL | PSP | WISPR between 2019-09-21T15:55:47.618372 and 2019-09-22T15:55:47.618372
+WARNING:sunpy:SunpyDeprecationWarning: The default response format from the VSO client will be changing to 'table' in version 3.1. To remove this warning set response_format='legacy' to maintain the old behaviour or response_format='table' to use the new behaviour.
+INFO:root:Query: NSO | Evans | spectroheliograph between 1998-06-15T13:31:05.816272 and 1998-06-16T13:31:05.816272
+WARNING:sunpy:SunpyDeprecationWarning: The default response format from the VSO client will be changing to 'table' in version 3.1. To remove this warning set response_format='legacy' to maintain the old behaviour or response_format='table' to use the new behaviour.
+WARNING:sunpy:SunpyDeprecationWarning: The default response format from the VSO client will be changing to 'table' in version 3.1. To remove this warning set response_format='legacy' to maintain the old behaviour or response_format='table' to use the new behaviour.
+WARNING:sunpy:SunpyDeprecationWarning: The default response format from the VSO client will be changing to 'table' in version 3.1. To remove this warning set response_format='legacy' to maintain the old behaviour or response_format='table' to use the new behaviour.
+WARNING:sunpy:SunpyDeprecationWarning: The default response format from the VSO client will be changing to 'table' in version 3.1. To remove this warning set response_format='legacy' to maintain the old behaviour or response_format='table' to use the new behaviour.
+WARNING:sunpy:SunpyDeprecationWarning: The default response format from the VSO client will be changing to 'table' in version 3.1. To remove this warning set response_format='legacy' to maintain the old behaviour or response_format='table' to use the new behaviour.
+WARNING:sunpy:SunpyDeprecationWarning: The default response format from the VSO client will be changing to 'table' in version 3.1. To remove this warning set response_format='legacy' to maintain the old behaviour or response_format='table' to use the new behaviour.
+WARNING:sunpy:SunpyDeprecationWarning: The default response format from the VSO client will be changing to 'table' in version 3.1. To remove this warning set response_format='legacy' to maintain the old behaviour or response_format='table' to use the new behaviour.
+WARNING:sunpy:SunpyDeprecationWarning: The default response format from the VSO client will be changing to 'table' in version 3.1. To remove this warning set response_format='legacy' to maintain the old behaviour or response_format='table' to use the new behaviour.
