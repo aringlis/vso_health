@@ -18,7 +18,7 @@ def read_vso_sources():
     return sources
 
 
-def query_vso_providers(skip_download=True):
+def query_vso_providers(skip_download=True, skip_list = []):
     '''This function performs a test on each Provider/Source/Instrument combination supported
     by the VSO, to see whether a VSO query results in success. This is done by generating a query
     for a randomized time interval between the known start and end times of data provision for each 
@@ -39,7 +39,7 @@ def query_vso_providers(skip_download=True):
     
     fname_append = datetime.datetime.now().strftime('%Y%m%d_%H%M%S')     
     logging.basicConfig(filename=os.path.join(data_path,'logs/query_vso_' + fname_append + '.log'), level=logging.INFO)
-    skip_list = [] #['SJ','SP1','SP2','Hi_C','Hi-C21']
+   # skip_list = [] #['SJ','SP1','SP2','Hi_C','Hi-C21']
     
     client = vso.VSOClient()
 
