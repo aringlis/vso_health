@@ -1,0 +1,30 @@
+INFO:root:Skipping: HAO | MLSO | K-Cor
+INFO:root:Skipping: HAO | MLSO | chp
+INFO:root:Skipping: HAO | MLSO | dpm
+INFO:root:Skipping: HAO | MLSO | mk4
+INFO:root:Skipping: HAO | SMM | cp
+INFO:root:Query: INAF-OACT | OACT | BE-Continuum between 2012-02-13T02:26:40.810434 and 2012-02-14T02:26:40.810434
+INFO:root:Random query failed. Trying known query: INAF-OACT | OACT | BE-Continuum between 2020-07-06T18:08:42.201007 and 2020-07-09T18:08:42.201007
+INFO:root:Query: INAF-OACT | OACT | BE-Halpha between 2021-04-21T21:57:58.080181 and 2021-04-22T21:57:58.080181
+INFO:root:Random query failed. Trying known query: INAF-OACT | OACT | BE-Halpha between 2021-04-19T15:11:35.576707 and 2021-04-22T15:11:35.576707
+INFO:root:Query: INAF-OACT | OACT | Cooke-Refractor between 2016-11-09T20:02:19.134045 and 2016-11-10T20:02:19.134045
+INFO:root:Random query failed. No known query for: INAF-OACT | OACT | Cooke-Refractor
+INFO:root:Query: JSOC | SDO | AIA between 2018-02-02T15:59:43.818206 and 2018-02-03T15:59:43.818206
+INFO:parfive:https://sdo7.nascom.nasa.gov/cgi-bin/drms_export.cgi?series=aia__lev1;compress=rice;record=211_1296662424-1296662988 failed to download with exception
+Timeout on reading data from socket
+INFO:root:Query: JSOC | SDO | HMI between 2018-08-06T13:12:28.068484 and 2018-08-07T13:12:28.068484
+INFO:root:Skipping: KIS | ChroTel | ChroTel
+INFO:root:Skipping: KSO | KSO | CAII
+INFO:root:Skipping: KSO | KSO | FILM
+INFO:root:Skipping: KSO | KSO | HA2
+INFO:root:Skipping: KSO | KSO | KPDC
+INFO:root:Skipping: KSO | KSO | PHOKA
+INFO:root:Skipping: KSO | KSO | TM-1001
+INFO:root:Skipping: KSO | KSO | TM-1010
+INFO:root:Query: LASP | MINXSS1 | X123 between 2016-08-30T15:34:17.830755 and 2016-08-31T15:34:17.830755
+INFO:root:Query: LASP | SDO | EVE between 2014-09-16T12:33:47.598349 and 2014-09-17T12:33:47.598349
+INFO:parfive:http://lasp.colorado.edu/eve/data_access/evewebdataproducts/level1/esp/2014/esp_L1_2014259_006.fit.gz failed to download with exception
+Download Failed: http://lasp.colorado.edu/eve/data_access/evewebdataproducts/level1/esp/2014/esp_L1_2014259_006.fit.gz with error <ClientResponse(https://lasp.colorado.edu/eve/data_access/evewebdataproducts/level1/esp/2014/esp_L1_2014259_006.fit.gz) [404 Not Found]>
+<CIMultiDictProxy('Content-Type': 'text/html; charset=iso-8859-1', 'Content-Length': '196', 'Connection': 'keep-alive', 'Date': 'Mon, 15 Nov 2021 18:10:53 GMT', 'Server': 'Apache/2.4.41 (Unix) OpenSSL/1.0.2k-fips PHP/7.4.0', 'Set-Cookie': 'HttpOnly')>
+
+INFO:root:Query: LMSAL | IRIS | IRIS between 2021-04-03T05:34:06.849960 and 2021-04-04T05:34:06.849960
