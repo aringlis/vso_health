@@ -53,7 +53,7 @@ def query_vso_providers(skip_download=True, skip_list = []):
 
     for s in list(sources):
         flag_entry = {}
-        flag_entry['\ufeffProvider'] = s['\ufeffProvider']
+        flag_entry['Provider'] = s['Provider']
         flag_entry['Source'] = s['Source']
         flag_entry['Instrument'] = s['Instrument']
         
@@ -72,14 +72,14 @@ def query_vso_providers(skip_download=True, skip_list = []):
 
 
         if s['Instrument'] not in skip_list:
-            logging.info('Query: ' + s['\ufeffProvider'] + ' | ' + s['Source'] +
+            logging.info('Query: ' + s['Provider'] + ' | ' + s['Source'] +
                     ' | ' + s['Instrument'] + ' between ' + t1_query.isoformat() + ' and ' +
                     t2_query.isoformat())
 
 
     
             # now make the query
-            result = client.search(a.Time(t1_query, t2_query), a.Provider(s['\ufeffProvider']),
+            result = client.search(a.Time(t1_query, t2_query), a.Provider(s['Provider']),
                                     a.Source(s['Source']), a.Instrument(s['Instrument']), response_format = 'legacy')
 
 
@@ -90,10 +90,10 @@ def query_vso_providers(skip_download=True, skip_list = []):
                     print(query)
                     known_t1 = datetime.datetime.strptime(query['Date_Start'],'%Y-%m-%d %H:%M:%S.%f')
                     known_t2 = datetime.datetime.strptime(query['Date_End'],'%Y-%m-%d %H:%M:%S.%f')
-                    result2 = client.search(a.Time(known_t1, known_t2), a.Provider(s['\ufeffProvider']),
+                    result2 = client.search(a.Time(known_t1, known_t2), a.Provider(s['Provider']),
                                         a.Source(s['Source']), a.Instrument(s['Instrument']),
                                                 response_format = 'legacy')
-                    logging.info('Random query failed. Trying known query: '  + s['\ufeffProvider'] + ' | ' + s['Source'] +
+                    logging.info('Random query failed. Trying known query: '  + s['Provider'] + ' | ' + s['Source'] +
                         ' | ' + s['Instrument'] + ' between ' + known_t1.isoformat() + ' and ' +
                         known_t2.isoformat())
 
@@ -104,7 +104,7 @@ def query_vso_providers(skip_download=True, skip_list = []):
                         flag_entry['Status'] = 1
 
                 except IndexError:
-                    logging.info('Random query failed. No known query for: '  + s['\ufeffProvider'] + ' | ' + s['Source'] +
+                    logging.info('Random query failed. No known query for: '  + s['Provider'] + ' | ' + s['Source'] +
                         ' | ' + s['Instrument'])
                     flag_entry['Status'] = 9
 
@@ -130,7 +130,7 @@ def query_vso_providers(skip_download=True, skip_list = []):
 
                 
         else:
-            logging.info('Skipping: ' + s['\ufeffProvider'] + ' | ' + s['Source'] +
+            logging.info('Skipping: ' + s['Provider'] + ' | ' + s['Source'] +
                     ' | ' + s['Instrument'])
 
             flag_entry['Status'] = 2
@@ -146,7 +146,7 @@ def query_vso_providers(skip_download=True, skip_list = []):
    #     for key in flags.keys(): 
     #        f.write(key + ',' + str(flags[key]) + '\n') 
 
-    header = ['\ufeffProvider','Source','Instrument','Status']
+    header = ['Provider','Source','Instrument','Status']
     with open(fname,'w') as f:
         w = csv.DictWriter(f, header)
         w.writeheader()
@@ -197,7 +197,7 @@ def find_query_with_data(instrument = 'SECCHI', n_iterations = 40):
         t2_query = t1 + datetime.timedelta(seconds = dt_randomize + (86400*3))
 
         # now make the query
-        result = client.search(a.Time(t1_query, t2_query), a.Provider(source_dict['\ufeffProvider']),
+        result = client.search(a.Time(t1_query, t2_query), a.Provider(source_dict['Provider']),
                                     a.Source(source_dict['Source']), a.Instrument(source_dict['Instrument']), response_format = 'legacy')
 
         if len(result) > 0:
@@ -209,7 +209,7 @@ def find_query_with_data(instrument = 'SECCHI', n_iterations = 40):
         
         
     if success:  
-        successful_query_dict['\ufeffProvider'] = source_dict['\ufeffProvider']
+        successful_query_dict['Provider'] = source_dict['Provider']
         successful_query_dict['Source'] = source_dict['Source']
         successful_query_dict['Instrument'] = source_dict['Instrument']
         successful_query_dict['Date_Start'] = t1_success
@@ -234,7 +234,7 @@ def create_known_query_database():
         database.append(result[0])
 
 
-    header = ['\ufeffProvider','Source','Instrument','Date_Start','Date_End']
+    header = ['Provider','Source','Instrument','Date_Start','Date_End']
     with open(os.path.join(data_path,'vso_known_query_database.csv','w')) as f:
         w = csv.DictWriter(f, header)
         w.writeheader()
