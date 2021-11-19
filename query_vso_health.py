@@ -152,7 +152,7 @@ def query_vso_providers(skip_download=True, skip_list = []):
         w.writeheader()
         w.writerows(flag_list)
             
-    return flag_list
+    return flag_list, fname
         
 
     
