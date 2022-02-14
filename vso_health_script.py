@@ -17,7 +17,7 @@ df_master, df = create_master_status_file()
 vso_health_bokeh_plot()
 
 # generate a report of the latest VSO health check
-generate_report(fname)
+report_fname = generate_report(fname)
 
 
 

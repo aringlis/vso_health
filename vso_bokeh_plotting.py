@@ -15,7 +15,11 @@ def vso_health_bokeh_plot():
     output_file(os.path.join(data_path,"vso_health_bokeh_plot_files/vso_source_health_summary.html"))
     
     df = pd.read_csv(os.path.join(data_path,'vso_health_status_master_record.csv'))
-    df2 = df[df.columns[3:]] 
+    # truncate to the last 30 entries only
+    if len(df.columns) < 35:
+        df2 = df[df.columns[3:]]
+    else:
+        df2 = df[df.columns[-30:]]
 
     #re-cast the Instrument column so that it includes Provider/Source info as well
     newnames = []
