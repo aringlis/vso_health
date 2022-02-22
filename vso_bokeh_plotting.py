@@ -1,12 +1,15 @@
 import os
 import pandas as pd
 import datetime
-from bokeh.io import output_file, show 
+from bokeh.io import output_file, show, export_png 
 from bokeh.models import (BasicTicker, ColorBar, ColumnDataSource, 
                             LinearColorMapper, PrintfTickFormatter)
 from bokeh.models import Legend
 from bokeh.plotting import figure  
 from bokeh.transform import transform, factor_cmap 
+
+from html2image import Html2Image
+
 
 data_path = os.path.expanduser('~/physics/data_curation/vso_health/')
 
@@ -79,3 +82,17 @@ def vso_health_bokeh_plot():
     p.xaxis.major_label_orientation = 'vertical'
     p.legend.location = 'center_right'
     show(p)
+    
+
+
+def convert_html_to_png():
+
+    hti = Html2Image(output_path = data_path)
+
+    input_file = os.path.join(data_path,"vso_health_bokeh_plot_files/vso_source_health_summary.html")
+    
+    hti.screenshot(
+        html_file=input_file,
+        save_as="vso_source_health_summary.png",
+        size=(1370, 1420)
+        )

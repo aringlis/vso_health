@@ -58,17 +58,24 @@ def query_vso_providers(skip_download=True, skip_list = []):
         flag_entry['Instrument'] = s['Instrument']
         
         # first, select a random time within the data source availability window
-        t1 = datetime.datetime.strptime(s['Date_Start'],'%Y-%m-%d')
-        if s['Date_End']:
-            t2 = datetime.datetime.strptime(s['Date_End'],'%Y-%m-%d')
-        else:
-            t2 = datetime.datetime.today()
 
-        dt = (t2-t1).total_seconds() 
-        dt_randomize = dt * np.random.uniform()
+        # special case for SDAC/SDO/AIA synoptic data
+        if (s['Provider'] == 'SDAC') and (s['Instrument'] == 'AIA'):
+            t1_query = datetime.datetime.now() - datetime.timedelta(days = 4)
+            t2_query = t1_query + datetime.timedelta(days = 1)
+        else:
+            # all other cases
+            t1 = datetime.datetime.strptime(s['Date_Start'],'%Y-%m-%d')
+            if s['Date_End']:
+                t2 = datetime.datetime.strptime(s['Date_End'],'%Y-%m-%d')
+            else:
+                t2 = datetime.datetime.today()
+
+            dt = (t2-t1).total_seconds() 
+            dt_randomize = dt * np.random.uniform()
         
-        t1_query = t1 + datetime.timedelta(seconds = dt_randomize)
-        t2_query = t1 + datetime.timedelta(seconds = dt_randomize + 86400)
+            t1_query = t1 + datetime.timedelta(seconds = dt_randomize)
+            t2_query = t1 + datetime.timedelta(seconds = dt_randomize + 86400)
 
 
         if s['Instrument'] not in skip_list:
@@ -140,7 +147,7 @@ def query_vso_providers(skip_download=True, skip_list = []):
             
     # write the results of the check to a csv file
   #  fname_ext = datetime.datetime.now().strftime('%Y%m%d_%H%M%S')
-    fname = os.path.join(data_path,'vso_health_check_' + fname_append + '.csv')
+    fname = os.path.join(data_path,'vso_health_checks/vso_health_check_' + fname_append + '.csv')
             
   #  with open(fname,'w') as f: 
    #     for key in flags.keys(): 
@@ -246,11 +253,11 @@ def create_known_query_database():
 def create_master_status_file():
     '''Read all existing VSO health check files and create a master record.'''
 
-    files = glob.glob(os.path.join(data_path,'vso_health_check*.csv'))
+    files = glob.glob(os.path.join(data_path,'vso_health_checks/vso_health_check*.csv'))
     files.sort()
     filestrings = files[0].split('_')
-    file_date = filestrings[5]
-    file_time = filestrings[6].split('.')[0]
+    file_date = filestrings[7]
+    file_time = filestrings[8].split('.')[0]
     column_id = file_date + '_' + file_time
 
     df_master = pandas.read_csv(files[0])
@@ -259,8 +266,8 @@ def create_master_status_file():
     for f in files[1:]:
         # extract the date and time for each VSO check file
         filestrings = f.split('_')
-        file_date = filestrings[5]
-        file_time = filestrings[6].split('.')[0]
+        file_date = filestrings[7]
+        file_time = filestrings[8].split('.')[0]
         column_id = file_date + '_' + file_time
 
         
