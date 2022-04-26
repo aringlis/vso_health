@@ -122,7 +122,7 @@ def query_vso_providers(skip_download=True, skip_list = []):
                 
             if not skip_download and len(result) > 0:
                 try:
-                    dl = client.fetch(result[0])
+                    dl = client.fetch(result[0], path = os.path.expanduser('~/vso_health_temp_data'))
                     if len(dl.errors) !=0: 
                         flag_entry['Status'] = 8
                     elif (len(dl) == 0):
@@ -285,7 +285,25 @@ def create_master_status_file():
 
         
 
-        
+def cleanup_query_files():
+    '''Remove downloaded files from the sunpy/data directory'''
+
+
+    now = datetime.datetime.now().timestamp()
+    path = os.path.expanduser('~/vso_health_temp_data/')
+
+    files = os.listdir(path)
+
+    for f in files:
+        full_fname = os.path.join(path,f)
+        # remove files downloaded in the last hour
+        if os.stat(full_fname).st_mtime > (now - 3600.):
+            if os.path.isfile(full_fname):
+                os.remove(full_fname)
+
+
+                
+    
         
         
 
