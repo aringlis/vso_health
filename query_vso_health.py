@@ -75,7 +75,11 @@ def query_vso_providers(skip_download=True, skip_list = []):
             dt_randomize = dt * np.random.uniform()
         
             t1_query = t1 + datetime.timedelta(seconds = dt_randomize)
-            t2_query = t1 + datetime.timedelta(seconds = dt_randomize + 86400)
+            # special case for JSOC/AIA and JSOC/HMI. If the query duration is too long, it returns summary records, causing a timeout on download
+            if (s['Provider'] == 'JSOC') and ( (s['Instrument'] == 'AIA') or (s['Instrument'] == 'HMI') ):
+                t2_query = t1 + datetime.timedelta(seconds = dt_randomize + 3600)
+            else:
+                t2_query = t1 + datetime.timedelta(seconds = dt_randomize + 86400)
 
 
         if s['Instrument'] not in skip_list:
@@ -296,8 +300,8 @@ def cleanup_query_files():
 
     for f in files:
         full_fname = os.path.join(path,f)
-        # remove files downloaded in the last hour
-        if os.stat(full_fname).st_mtime > (now - 3600.):
+        # remove files downloaded in the 2 hours
+        if os.stat(full_fname).st_mtime > (now - 7200.):
             if os.path.isfile(full_fname):
                 os.remove(full_fname)
 
