@@ -10,7 +10,7 @@ import logging
 import glob
 import pandas
 
-data_path = os.path.expanduser('~/physics/data_curation/vso_health/')
+data_path = os.path.expanduser('~/vso_health/')
 
 def read_vso_sources():
     sources = csv.DictReader(open(os.path.join(data_path,'vso_sources.csv')))
@@ -255,9 +255,9 @@ def create_master_status_file():
 
     files = glob.glob(os.path.join(data_path,'vso_health_checks/vso_health_check*.csv'))
     files.sort()
-    filestrings = files[0].split('_')
-    file_date = filestrings[7]
-    file_time = filestrings[8].split('.')[0]
+    filestrings = os.path.basename(files[0]).split('_')
+    file_date = filestrings[3]
+    file_time = filestrings[4].split('.')[0]
     column_id = file_date + '_' + file_time
 
     df_master = pandas.read_csv(files[0])
@@ -265,9 +265,9 @@ def create_master_status_file():
     
     for f in files[1:]:
         # extract the date and time for each VSO check file
-        filestrings = f.split('_')
-        file_date = filestrings[7]
-        file_time = filestrings[8].split('.')[0]
+        filestrings = os.path.basename(f).split('_')
+        file_date = filestrings[3]
+        file_time = filestrings[4].split('.')[0]
         column_id = file_date + '_' + file_time
 
         
