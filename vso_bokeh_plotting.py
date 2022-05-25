@@ -11,11 +11,11 @@ from bokeh.transform import transform, factor_cmap
 from html2image import Html2Image
 
 
-data_path = os.path.expanduser('~/physics/data_curation/vso_health/')
+data_path = os.path.expanduser('~/vso_health/')
 
 def vso_health_bokeh_plot():
 
-    output_file(os.path.join(data_path,"vso_health_bokeh_plot_files/vso_source_health_summary.html"))
+    output_file(os.path.join(data_path,"vso_source_health_summary.html"))
     
     df = pd.read_csv(os.path.join(data_path,'vso_health_status_master_record.csv'))
     # truncate to the last 30 entries only
@@ -89,7 +89,7 @@ def convert_html_to_png():
 
     hti = Html2Image(output_path = data_path)
 
-    input_file = os.path.join(data_path,"vso_health_bokeh_plot_files/vso_source_health_summary.html")
+    input_file = os.path.join(data_path,"vso_source_health_summary.html")
     
     hti.screenshot(
         html_file=input_file,

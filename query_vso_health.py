@@ -97,7 +97,8 @@ def query_vso_providers(skip_download=True, skip_list = []):
             if len(result) == 0:
                 # try a query at a time where we know there should be data
                 try:
-                    query = [k for k in known_queries if k['Instrument'] == s['Instrument']][0]
+                    query = [k for k in known_queries if (k['Instrument'] == s['Instrument']) and (k['Source'] == s['Source']) and 
+                            (k['Provider'] == s['Provider']) ][0]
                     print(query)
                     known_t1 = datetime.datetime.strptime(query['Date_Start'],'%Y-%m-%d %H:%M:%S.%f')
                     known_t2 = datetime.datetime.strptime(query['Date_End'],'%Y-%m-%d %H:%M:%S.%f')
