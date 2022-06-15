@@ -1,4 +1,4 @@
-# Virtual Solar Observatory Health Status
+title: "Virtual Solar Observatory Health Status"
 
 This minimal site hosts the results of automatic health checks that are performed on VSO data sources. On this page you can find the latest summary plot, as well as the overall health check performance over time.
 
