@@ -1,5 +1,6 @@
 import os
 import pandas as pd
+import numpy as np
 import datetime
 from bokeh.io import output_file, show, export_png 
 from bokeh.models import (BasicTicker, ColorBar, ColumnDataSource, 
@@ -15,7 +16,7 @@ data_path = os.path.expanduser('~/vso_health/')
 
 def vso_health_bokeh_plot():
 
-    output_file(os.path.join(data_path,"vso_source_health_summary.html"))
+    output_file(os.path.join(data_path,"vso_source_health_summary.html"), 'VSO Health Summary')
     
     df = pd.read_csv(os.path.join(data_path,'vso_health_status_master_record.csv'))
     # truncate to the last 30 entries only
@@ -63,7 +64,7 @@ def vso_health_bokeh_plot():
     p = figure(width=1400,height=1400,x_range=list(df4['Time'].unique()), y_range=list(reversed(df4['Instrument'].unique()) ),
                    tools = 'hover', tooltips = [('Time','@Time'), ('Instrument','@Instrument'),('Status','@Health_value')])
 
-    p.title.text = ' VSO source health status'
+    p.title.text = ' VSO source health status: Generated at: ' + datetime.datetime.now().strftime("%Y-%m-%d %H:%M")
     p.add_layout(Legend(), 'right')
     
     
@@ -79,7 +80,7 @@ def vso_health_bokeh_plot():
     p.rect(x = 'Time', y = 'Instrument', width=1, height=1, source = df4, line_color='black', 
                fill_color = transform('Health_value', mapper2), legend_field = 'Label')#'Health_value')
 
-    p.xaxis.major_label_orientation = 'vertical'
+    p.xaxis.major_label_orientation = np.pi/4  #'vertical'
     p.legend.location = 'center_right'
     show(p)
     

@@ -7,7 +7,7 @@ from vso_report_helpers import percent_good
 from plot_performance import plot_performance
 
 # instruments in the skip list will not be tested
-skiplist = ['K-Cor','chp','dpm','mk4','cp','ChroTel','BCS','HXT','SXT','WBS','XRT','CFDT1','CFDT2']
+skiplist = ['K-Cor','chp','dpm','mk4','cp','ChroTel','XRT','CFDT1','CFDT2']
 
 # query each of the instruments supported by the VSO in turn
 flags, fname = query_vso_providers(skip_download = False, skip_list = skiplist)
