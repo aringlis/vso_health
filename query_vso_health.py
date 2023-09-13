@@ -37,7 +37,7 @@ def query_vso_providers(skip_download=True, skip_list = []):
 
 
     
-    fname_append = datetime.datetime.now().strftime('%Y%m%d_%H%M%S')     
+    fname_append = datetime.datetime.utcnow().strftime('%Y%m%d_%H%M%S')     
     logging.basicConfig(filename=os.path.join(data_path,'logs/query_vso_' + fname_append + '.log'), level=logging.INFO)
    # skip_list = [] #['SJ','SP1','SP2','Hi_C','Hi-C21']
     
@@ -255,10 +255,14 @@ def create_known_query_database():
     return database
         
 
-def create_master_status_file():
+def create_master_status_file(idl = None):
     '''Read all existing VSO health check files and create a master record.'''
 
-    files = glob.glob(os.path.join(data_path,'vso_health_checks/vso_health_check*.csv'))
+    if idl:
+        files = glob.glob(os.path.join(data_path,'vso_health_idl_version/vso_health_checks_idl/vso_health_check*.csv'))
+    else:
+        files = glob.glob(os.path.join(data_path,'vso_health_checks/vso_health_check*.csv'))
+
     files.sort()
     filestrings = os.path.basename(files[0]).split('_')
     file_date = filestrings[3]
@@ -279,10 +283,13 @@ def create_master_status_file():
         df = pandas.read_csv(f)
         df.rename({'Status':column_id},axis = 'columns', inplace=True)
 
-        df_master = pandas.merge(df_master, df)
+        df_master = pandas.merge(df_master, df, how='right')
 
 
-    df_master.to_csv(os.path.join(data_path,'vso_health_status_master_record.csv'))
+    if idl:
+        df_master.to_csv(os.path.join(data_path,'vso_health_status_master_record_idl.csv'))
+    else:
+        df_master.to_csv(os.path.join(data_path,'vso_health_status_master_record.csv'))
 
     return df_master, df
 
@@ -302,9 +309,9 @@ def cleanup_query_files():
     for f in files:
         full_fname = os.path.join(path,f)
         # remove files downloaded in the 2 hours
-        if os.stat(full_fname).st_mtime > (now - 7200.):
-            if os.path.isfile(full_fname):
-                os.remove(full_fname)
+        #if os.stat(full_fname).st_mtime > (now - 7200.):
+         #   if os.path.isfile(full_fname):
+        os.remove(full_fname)
 
 
                 
