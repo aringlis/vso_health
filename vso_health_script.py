@@ -4,7 +4,7 @@ from query_vso_health import query_vso_providers, create_master_status_file, cle
 from vso_bokeh_plotting import vso_health_bokeh_plot, convert_html_to_png
 #from vso_report_helpers import generate_report
 from vso_report_helpers import percent_good
-from plot_performance import plot_performance, percent_good_histogram, vso_quadrant_chart
+from plot_performance import plot_performance, percent_good_histogram
 
 # instruments in the skip list will not be tested
 skiplist = ['ChroTel','XRT','CFDT1','CFDT2','CLIMSO','OVSA']
@@ -28,5 +28,4 @@ plot_performance()
 plot_performance(idl=True)
 percent_good_histogram()
 percent_good_histogram(idl=True)
-vso_quadrant_chart()
 
