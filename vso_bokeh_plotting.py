@@ -19,10 +19,11 @@ def vso_health_bokeh_plot(idl = None):
     if idl:
         output_file(os.path.join(data_path,"vso_source_health_summary_idl.html"),'VSO health summary (IDL)')
         df = pd.read_csv(os.path.join(data_path,'vso_health_status_master_record_idl.csv'))
+        png_outfilename = 'vso_source_health_summary_idl.png'
     else:    
         output_file(os.path.join(data_path,"vso_source_health_summary_python.html"),'VSO health summary')
         df = pd.read_csv(os.path.join(data_path,'vso_health_status_master_record.csv'))
-        
+        png_outfilename = 'vso_source_health_summary_python.png'
     
     # truncate to the last 30 entries only
     if len(df.columns) < 35:
@@ -93,6 +94,7 @@ def vso_health_bokeh_plot(idl = None):
     p.xaxis.major_label_orientation = np.pi/4#'vertical'
     p.legend.location = 'center_right'
     show(p)
+    export_png(p, filename = png_outfilename)
     
 
 
