@@ -5,7 +5,7 @@ import datetime
 from bokeh.io import output_file, show, export_png 
 from bokeh.models import (BasicTicker, ColorBar, ColumnDataSource, 
                             LinearColorMapper, PrintfTickFormatter)
-from bokeh.models import Legend
+from bokeh.models import Legend, Title
 from bokeh.plotting import figure  
 from bokeh.transform import transform, factor_cmap 
 
@@ -30,6 +30,9 @@ def vso_health_bokeh_plot(idl = None):
         df2 = df[df.columns[3:]]
     else:
         df2 = df[df.columns[-30:]]
+
+    #get thet time of the latest data in the file
+    latest_data_time = datetime.datetime.strptime(df.columns[-1],'%Y%m%d_%H%M%S')
 
     #re-cast the Instrument column so that it includes Provider/Source info as well
     newnames = []
@@ -69,13 +72,17 @@ def vso_health_bokeh_plot(idl = None):
     #df3['Time'] = tims
 
     #create the bokeh plot
-    p = figure(width=1400,height=1400,x_range=list(df4['Time'].unique()), y_range=list(reversed(df4['Instrument'].unique()) ),
+    p = figure(width=1400,height=1500,x_range=list(df4['Time'].unique()), y_range=list(reversed(df4['Instrument'].unique()) ),
                    tools = 'hover', tooltips = [('Time','@Time'), ('Instrument','@Instrument'),('Status','@Health_value')])
 
     if idl:
-        p.title.text = ' VSO source health status (IDL): Generated at ' + datetime.datetime.utcnow().strftime("%Y-%m-%d %H:%M" + ' UT')
+        p.title.text = ' VSO source health status (IDL): Latest data ' + datetime.datetime.strftime(latest_data_time, "%Y-%m-%d %H:%M" + ' UT')
+        #p.title.text = ' VSO source health status (IDL): Generated at ' + datetime.datetime.utcnow().strftime("%Y-%m-%d %H:%M" + ' UT')
     else:
-        p.title.text = ' VSO source health status (Python): Generated at ' + datetime.datetime.utcnow().strftime("%Y-%m-%d %H:%M" + ' UT')
+        p.title.text = ' VSO source health status (Python): Latest data ' + datetime.datetime.strftime(latest_data_time, "%Y-%m-%d %H:%M" + ' UT')
+        #p.title.text = ' VSO source health status (Python): Generated at ' + datetime.datetime.utcnow().strftime("%Y-%m-%d %H:%M" + ' UT')
+
+    p.add_layout(Title(text="Report generated at "+ datetime.datetime.utcnow().strftime("%Y-%m-%d %H:%M" + ' UT'), text_font_size="10pt", text_font_style="italic"), 'above')
     p.add_layout(Legend(), 'right')
     p.title.text_font_size = '16pt'    
     
