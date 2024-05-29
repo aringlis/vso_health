@@ -2,6 +2,8 @@ import os
 import pandas as pd
 import numpy as np
 import datetime
+import platform
+import sunpy
 from bokeh.io import output_file, show, export_png 
 from bokeh.models import (BasicTicker, ColorBar, ColumnDataSource, 
                             LinearColorMapper, PrintfTickFormatter)
@@ -20,6 +22,9 @@ def vso_health_bokeh_plot(idl = None):
         output_file(os.path.join(data_path,"vso_source_health_summary_idl.html"),'VSO health summary (IDL)')
         df = pd.read_csv(os.path.join(data_path,'vso_health_status_master_record_idl.csv'))
         png_outfilename = 'vso_source_health_summary_idl.png'
+        ssw_path = '/service/solarsoft/'
+        ssw_last_update = os.path.getmtime(os.path.join(ssw_path,'gen/setup/ssw_map.dat'))
+        ssw_last_update_date = datetime.datetime.fromtimestamp(ssw_last_update).date().strftime('%Y-%m-%d')
     else:    
         output_file(os.path.join(data_path,"vso_source_health_summary_python.html"),'VSO health summary')
         df = pd.read_csv(os.path.join(data_path,'vso_health_status_master_record.csv'))
@@ -78,11 +83,16 @@ def vso_health_bokeh_plot(idl = None):
     if idl:
         p.title.text = ' VSO source health status (IDL): Latest data ' + datetime.datetime.strftime(latest_data_time, "%Y-%m-%d %H:%M" + ' UT')
         #p.title.text = ' VSO source health status (IDL): Generated at ' + datetime.datetime.utcnow().strftime("%Y-%m-%d %H:%M" + ' UT')
+        p.add_layout(Title(text="Report generated at "+ datetime.datetime.utcnow().strftime("%Y-%m-%d %H:%M" + ' UT')
+                               + '.                  SSW last update ' + ssw_last_update_date,text_font_size="10pt", text_font_style="italic"), 'above')
     else:
         p.title.text = ' VSO source health status (Python): Latest data ' + datetime.datetime.strftime(latest_data_time, "%Y-%m-%d %H:%M" + ' UT')
         #p.title.text = ' VSO source health status (Python): Generated at ' + datetime.datetime.utcnow().strftime("%Y-%m-%d %H:%M" + ' UT')
+        p.add_layout(Title(text="Report generated at "+ datetime.datetime.utcnow().strftime("%Y-%m-%d %H:%M" + ' UT')
+                               + '.                    Python version ' + platform.python_version() + '. SunPy version ' + sunpy.__version__,
+                               text_font_size="10pt", text_font_style="italic"), 'above')
 
-    p.add_layout(Title(text="Report generated at "+ datetime.datetime.utcnow().strftime("%Y-%m-%d %H:%M" + ' UT'), text_font_size="10pt", text_font_style="italic"), 'above')
+    #p.add_layout(Title(text="Report generated at "+ datetime.datetime.utcnow().strftime("%Y-%m-%d %H:%M" + ' UT'), text_font_size="10pt", text_font_style="italic"), 'above')
     p.add_layout(Legend(), 'right')
     p.title.text_font_size = '16pt'    
     
