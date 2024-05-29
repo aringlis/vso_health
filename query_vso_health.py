@@ -314,17 +314,30 @@ def cleanup_query_files():
         os.remove(full_fname)
 
 
-                
-    
-        
-        
+def create_missing_health_check(outfilename = 'vso_health_check_null.csv',idl=False):
+    '''Sometimes we need to create a dummy file to insert into the vso health database. This happens
+       if a day was missed for some reason.'''
 
-    
-        
-        
+    if idl:
+        full_fname = os.path.join('vso_health_idl_version/vso_health_checks_idl',outfilename)
+    else:
+        full_fname = os.path.join('vso_health_checks',outfilename)
 
+    header = ['Provider','Source','Instrument','Status']
+    sources = read_vso_sources()
+    flag_list = []
     
+    for s in sources:
+        flag_entry = {}
+        flag_entry['Provider'] = s['Provider']
+        flag_entry['Source'] = s['Source']
+        flag_entry['Instrument'] = s['Instrument']
+        flag_entry['Status'] = 2
+        flag_list.append(flag_entry)
 
-    
+    with open(full_fname,'w') as f:
+        w = csv.DictWriter(f, header)
+        w.writeheader()
+        w.writerows(flag_list)
 
-    
+
