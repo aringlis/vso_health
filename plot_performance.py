@@ -53,11 +53,11 @@ def plot_performance(idl=False):
 def percent_good_histogram(idl=False):
     
     if idl:
-        df = pandas.read_csv('/home/ainglis/vso_health/vso_health_status_master_record_idl.csv', index_col=0)
+        df = pandas.read_csv('/home/ainglis/vso_health/vso_health_status_master_record_idl.csv')
         savefilename = 'percent_good_per_source_idl.pdf'
         savefilename2 = 'percent_good_per_source_idl.png'
     else:
-        df = pandas.read_csv('/home/ainglis/vso_health/vso_health_status_master_record.csv', index_col=0)
+        df = pandas.read_csv('/home/ainglis/vso_health/vso_health_status_master_record.csv')
         savefilename = 'percent_good_per_source_python.pdf'
         savefilename2 = 'percent_good_per_source_python.png'
 
@@ -72,7 +72,7 @@ def percent_good_histogram(idl=False):
     percents_good = []
     percents_skipped = []
     for i, row in df2.iterrows():
-        names.append(df.iloc[i][0] + '/' + df.iloc[i][1] + '/' + df.iloc[i][2])
+        names.append(df.loc[i]['Provider'] + '/' + df.loc[i]['Source'] + '/' + df.loc[i]['Instrument'])
         num_good = np.sum(row == 0.0) + np.sum(row == 1.0)
         num_skipped = np.sum(row == 2.0)
         percents_good.append(num_good / len(row))

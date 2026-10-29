@@ -3,14 +3,20 @@ import datetime
 import sunpy
 from sunpy.net import vso, attrs as a
 
+import copy
 import os
 import csv
 import warnings
 import logging
 import glob
 import pandas
+import time
+from subprocess import PIPE, run
 
 data_path = os.path.expanduser('~/vso_health/')
+
+# Ignore all SunPy deprecation warnings
+warnings.simplefilter('ignore', sunpy.util.exceptions.SunpyDeprecationWarning)
 
 def read_vso_sources():
     sources = csv.DictReader(open(os.path.join(data_path,'vso_sources.csv')))
@@ -18,7 +24,7 @@ def read_vso_sources():
     return sources
 
 
-def query_vso_providers(skip_download=True, skip_list = []):
+def query_vso_providers(skip_download=True, skip_list = [],test_known_queries = False):
     '''This function performs a test on each Provider/Source/Instrument combination supported
     by the VSO, to see whether a VSO query results in success. This is done by generating a query
     for a randomized time interval between the known start and end times of data provision for each 
@@ -35,10 +41,15 @@ def query_vso_providers(skip_download=True, skip_list = []):
 
     '''
 
-
+    script_start_time = time.perf_counter()
     
     fname_append = datetime.datetime.utcnow().strftime('%Y%m%d_%H%M%S')     
-    logging.basicConfig(filename=os.path.join(data_path,'logs/query_vso_' + fname_append + '.log'), level=logging.INFO)
+    logging.basicConfig(filename=os.path.join(data_path,'logs/query_vso_' + fname_append + '.log'), level=logging.INFO,
+format='%(asctime)s %(levelname)s: %(message)s',datefmt='%Y-%m-%d %H:%M:%S')
+    logging.Formatter.converter = time.gmtime
+    logging.info(r'Current 1-min load average: ' + str(os.getloadavg()[0]))
+    logging.info(r'Current 5-min load average: ' + str(os.getloadavg()[1]))
+    logging.info(r'Current 15-min load average: ' + str(os.getloadavg()[2]))
    # skip_list = [] #['SJ','SP1','SP2','Hi_C','Hi-C21']
     
     client = vso.VSOClient()
@@ -82,7 +93,7 @@ def query_vso_providers(skip_download=True, skip_list = []):
                 t2_query = t1 + datetime.timedelta(seconds = dt_randomize + 86400)
 
 
-        if s['Instrument'] not in skip_list:
+        if s['Provider'] + '/' + s['Source'] + '/' + s['Instrument'] not in skip_list:
             logging.info('Query: ' + s['Provider'] + ' | ' + s['Source'] +
                     ' | ' + s['Instrument'] + ' between ' + t1_query.isoformat() + ' and ' +
                     t2_query.isoformat())
@@ -90,11 +101,20 @@ def query_vso_providers(skip_download=True, skip_list = []):
 
     
             # now make the query
-            result = client.search(a.Time(t1_query, t2_query), a.Provider(s['Provider']),
-                                    a.Source(s['Source']), a.Instrument(s['Instrument']), response_format = 'legacy')
+            flag_entry['Querytime'] = datetime.datetime.now(datetime.timezone.utc).strftime('%Y-%m-%dT%H:%M:%S')
+            if not test_known_queries:
+                try:
+                    result = client.search(a.Time(t1_query, t2_query), a.Provider(s['Provider']),
+                         	               a.Source(s['Source']), a.Instrument(s['Instrument']) , response_format = 'legacy')
+                except:
+                    logging.info('Search did not return a result for : ' + s['Provider'] + ' | ' + s['Source'] +
+                        ' | ' + s['Instrument'])
+                    flag_entry['Status'] = 10
+                    continue
+            else:
+                result = []
 
-
-            if len(result) == 0:
+            if (len(result) == 0) or (test_known_queries == True):
                 # try a query at a time where we know there should be data
                 try:
                     query = [k for k in known_queries if (k['Instrument'] == s['Instrument']) and (k['Source'] == s['Source']) and 
@@ -114,6 +134,7 @@ def query_vso_providers(skip_download=True, skip_list = []):
                         flag_entry['Status'] = 9
                     else:
                         flag_entry['Status'] = 1
+                        result = copy.deepcopy(result2)
 
                 except IndexError:
                     logging.info('Random query failed. No known query for: '  + s['Provider'] + ' | ' + s['Source'] +
@@ -133,7 +154,7 @@ def query_vso_providers(skip_download=True, skip_list = []):
                     elif (len(dl) == 0):
                         flag_entry['Status'] = 8
                     else:
-                        flag_entry['Status'] = 0
+                        pass
                 except:
                     #if the download fails due to a hard error (e.g. Evans radioheliograph), catch this and continue
                     flag_entry['Status'] = 8
@@ -158,12 +179,17 @@ def query_vso_providers(skip_download=True, skip_list = []):
    #     for key in flags.keys(): 
     #        f.write(key + ',' + str(flags[key]) + '\n') 
 
-    header = ['Provider','Source','Instrument','Status']
+    header = ['Provider','Source','Instrument','Status','Querytime']
     with open(fname,'w') as f:
         w = csv.DictWriter(f, header)
         w.writeheader()
         w.writerows(flag_list)
             
+    logging.info(r'Current 1-min load average: ' + str(os.getloadavg()[0]))
+    logging.info(r'Current 5-min load average: ' + str(os.getloadavg()[1]))
+    logging.info(r'Current 15-min load average: ' + str(os.getloadavg()[2]))
+    script_total_time = time.perf_counter() - script_start_time
+    logging.info(f"VSO health queries completed after: {script_total_time:.2f} seconds")
     return flag_list, fname
         
 
@@ -255,47 +281,85 @@ def create_known_query_database():
     return database
         
 
+#def create_master_status_file(idl = None):
+#    '''Read all existing VSO health check files and create a master record.'''
+#
+#    if idl:
+#        files = glob.glob(os.path.join(data_path,'vso_health_idl_version/vso_health_checks_idl/vso_health_check*.csv'))
+#    else:
+#        files = glob.glob(os.path.join(data_path,'vso_health_checks/vso_health_check*.csv'))
+#
+#    files.sort()
+#    filestrings = os.path.basename(files[0]).split('_')
+#    file_date = filestrings[3]
+#    file_time = filestrings[4].split('.')[0]
+#    column_id = file_date + '_' + file_time
+#
+#    df_master = pandas.read_csv(files[0])
+#    df_master.rename({'Status':column_id},axis = 'columns', inplace=True)
+#    
+#    for f in files[1:]:
+#        # extract the date and time for each VSO check file
+#        filestrings = os.path.basename(f).split('_')
+#        file_date = filestrings[3]
+#        file_time = filestrings[4].split('.')[0]
+#        column_id = file_date + '_' + file_time
+#
+#        
+#        df = pandas.read_csv(f)
+#        df.rename({'Status':column_id},axis = 'columns', inplace=True)
+#
+#        df_master = pandas.merge(df_master, df, how='right')
+#
+#
+ #   if idl:
+#        df_master.to_csv(os.path.join(data_path,'vso_health_status_master_record_idl.csv'))
+#    else:
+#        df_master.to_csv(os.path.join(data_path,'vso_health_status_master_record.csv'))
+#
+#    return df_master, df
+
+        
+
+        
+
+
 def create_master_status_file(idl = None):
-    '''Read all existing VSO health check files and create a master record.'''
-
     if idl:
-        files = glob.glob(os.path.join(data_path,'vso_health_idl_version/vso_health_checks_idl/vso_health_check*.csv'))
+        pattern = 'vso_health_idl_version/vso_health_checks_idl/vso_health_check*.csv'
+        out = 'vso_health_status_master_record_idl.csv'
+
     else:
-        files = glob.glob(os.path.join(data_path,'vso_health_checks/vso_health_check*.csv'))
+        pattern = 'vso_health_checks/vso_health_check*.csv'
+        out = 'vso_health_status_master_record.csv'
 
-    files.sort()
-    filestrings = os.path.basename(files[0]).split('_')
-    file_date = filestrings[3]
-    file_time = filestrings[4].split('.')[0]
-    column_id = file_date + '_' + file_time
+    out_times = out.replace('.csv','_querytimes.csv')
 
-    df_master = pandas.read_csv(files[0])
-    df_master.rename({'Status':column_id},axis = 'columns', inplace=True)
-    
-    for f in files[1:]:
-        # extract the date and time for each VSO check file
-        filestrings = os.path.basename(f).split('_')
-        file_date = filestrings[3]
-        file_time = filestrings[4].split('.')[0]
-        column_id = file_date + '_' + file_time
+    files = sorted(glob.glob(os.path.join(data_path, pattern)))
+    keys = ['Provider', 'Source', 'Instrument']
 
-        
-        df = pandas.read_csv(f)
-        df.rename({'Status':column_id},axis = 'columns', inplace=True)
+    columns = []
+    time_cols = []
+    for f in files:
+        parts = os.path.basename(f).split('_')
+        column_id = parts[3] + '_' + parts[4].split('.')[0]
+        #s = pandas.read_csv(f).set_index(keys)['Status'].rename(column_id)
+        df = pandas.read_csv(f).reindex(columns=keys + ['Status', 'Querytime'])
+        df = df.set_index(keys)
+       # assert s.index.is_unique, f'duplicate instrument keys in {f}'
+        assert df.index.is_unique, f'duplicate instrument keys in {f}'
 
-        df_master = pandas.merge(df_master, df, how='right')
+        columns.append(df['Status'].rename(column_id))
+        time_cols.append(df['Querytime'].rename(column_id))
+       # columns.append(s)
 
+    # one outer join on the index; a row missing from one run is just NaN there
+    df_master = pandas.concat(columns, axis=1).sort_index().reset_index()
+    df_master.to_csv(os.path.join(data_path, out), index=False)
 
-    if idl:
-        df_master.to_csv(os.path.join(data_path,'vso_health_status_master_record_idl.csv'))
-    else:
-        df_master.to_csv(os.path.join(data_path,'vso_health_status_master_record.csv'))
-
-    return df_master, df
-
-        
-
-        
+    df_times = pandas.concat(time_cols, axis=1).sort_index().reset_index()
+    df_times.to_csv(os.path.join(data_path, out_times), index=False)
+    return df_master
 
 def cleanup_query_files():
     '''Remove downloaded files from the sunpy/data directory'''
@@ -314,14 +378,28 @@ def cleanup_query_files():
         os.remove(full_fname)
 
 
+
+def verify_todays_health_check_exists(idl=False):
+    datestr = datetime.datetime.today().strftime('%Y%m%d')
+    if idl:
+        files = glob.glob('/home/ainglis/vso_health/vso_health_idl_version/vso_health_checks_idl/vso_health_check_' + datestr + '*.csv')
+    else:
+        files = glob.glob('/home/ainglis/vso_health/vso_health_checks/vso_health_check_' + datestr + '*.csv')
+    if files:
+        return True
+    else:
+        return False
+
+
+
 def create_missing_health_check(outfilename = 'vso_health_check_null.csv',idl=False):
     '''Sometimes we need to create a dummy file to insert into the vso health database. This happens
        if a day was missed for some reason.'''
 
     if idl:
-        full_fname = os.path.join('vso_health_idl_version/vso_health_checks_idl',outfilename)
+        full_fname = os.path.join('/home/ainglis/vso_health/vso_health_idl_version/vso_health_checks_idl',outfilename)
     else:
-        full_fname = os.path.join('vso_health_checks',outfilename)
+        full_fname = os.path.join('/home/ainglis/vso_health/vso_health_checks',outfilename)
 
     header = ['Provider','Source','Instrument','Status']
     sources = read_vso_sources()
@@ -339,5 +417,7 @@ def create_missing_health_check(outfilename = 'vso_health_check_null.csv',idl=Fa
         w = csv.DictWriter(f, header)
         w.writeheader()
         w.writerows(flag_list)
+
+
 
 

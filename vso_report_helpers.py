@@ -1,5 +1,6 @@
 import pandas
 import numpy as np
+import tabulate
 
 def percent_good(vso_health_check_file, idl = False):
     result = pandas.read_csv(vso_health_check_file)
@@ -31,4 +32,19 @@ def percent_good(vso_health_check_file, idl = False):
       with open('/home/ainglis/vso_health/percent_red.txt', 'w') as f:
           f.write(str(np.round(percent_red,1)))
  
+
+
+def sources_with_problems(vso_health_check_file, idl = False):
+    result = pandas.read_csv(vso_health_check_file)
+    problems = result[(result['Status'] == 8) | (result['Status'] ==9) ]
+    txt = tabulate.tabulate(problems,headers='keys',showindex=False)
+
+    if idl:
+        with open('/home/ainglis/vso_health/vso_source_problems_idl.txt','w') as f:
+            f.write(txt)
+    else:
+        with open('/home/ainglis/vso_health/vso_source_problems_python.txt','w') as f:
+            f.write(txt)
+
+
 
